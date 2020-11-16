@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "zumi-sushi"
+    }
+  },
+  "defaultProject": "zumi-sushi",
+  "cli": {
+    "analytics": "c929d1ec-f88b-48df-865f-8f4bbbd1bfcf"
+  }
 }
