@@ -33,7 +33,11 @@ export class RecipeType {
     return `www.flaticon.com`;
   }
 
+  getAuthorName(): string {
+    return this.svgAuthor.name;
+  }
+
   getAuthorLink(): string {
-    return `${this.getLink()}authors/${this.svgAuthor.toLowerCase()}`;
+    return `${this.getLink()}authors/${this.getAuthorName().toLowerCase()}`;
   }
 }
