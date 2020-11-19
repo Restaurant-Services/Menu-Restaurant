@@ -1,1 +1,10 @@
-<p>Credits works!</p>
+<div class="body-height">
+  <h1>CREDITS</h1>
+  <h1>Pelat-1</h1>
+  <div *ngFor="let type of recipeTypes" class="record">
+    <mat-icon class="icon-display" svgIcon="{{ type.svg }}" mat-list-icon></mat-icon>
+    <span class="space-left">
+      Icon made by <a href="{{ type.getAuthorLink() }}" title="{{ type.svgAuthor }}">{{ type.svgAuthor }}</a> from <a href="{{ type.getLink() }}" title="Flaticon">{{ type.getLinkWithoutHTTP() }}</a>
+    </span>
+  </div>
+</div>
