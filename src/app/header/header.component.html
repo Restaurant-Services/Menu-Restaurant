@@ -1,10 +1,10 @@
 <mat-toolbar color="primary" class="header-height">
   <mat-toolbar-row class="centering">
-    <mat-icon>menu</mat-icon>
-    <span class="after-mat-icon">ZUMI</span>
+    <mat-icon (click)="showHideMenu()">menu</mat-icon>
+    <span (click)="showHideMenu()" class="after-mat-icon">ZUMI</span>
     <span class="flex-expand"></span>
-    <span>RIEPILOGO</span>
+    <span (click)="showSummary()">RIEPILOGO</span>
     <span class="flex-expand"></span>
-    <span>Credits</span>
+    <span (click)="showCredits()">CREDITS</span>
   </mat-toolbar-row>
 </mat-toolbar>

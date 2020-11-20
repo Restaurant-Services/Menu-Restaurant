@@ -1,2 +1,5 @@
-<app-header></app-header>
-<app-sidenav></app-sidenav>
+<app-header #header [sidenavComponent]="sidenav"></app-header>
+<!--<app-header #header [website]="website" [sidenavC]="sidenav"></app-header>-->
+<!--<button (click)="out()"></button>-->
+<app-sidenav #sidenav [headerComponent]="header"></app-sidenav>
+<!--<app-sidenav #sidenav [showSubmenu]="website.showMenu" [header]="header"></app-sidenav>-->

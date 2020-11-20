@@ -1,13 +1,13 @@
 <mat-sidenav-container class="example-container body-height" autosize>
   <mat-sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
     <mat-nav-list>
-      <mat-list-item *ngFor="let type of recipeTypes" (click)="showSubmenu = !showSubmenu" class="parent">
+      <mat-list-item *ngFor="let type of recipeTypes" (click)="changeRecipeType(type)" class="parent">
         <mat-icon class="icon-display" svgIcon="{{ type.svg }}"></mat-icon>
         <span class="full-width" *ngIf="isExpanded || isShowing">{{ type.name }}</span>
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
   <div class="example-sidenav-content">
-    <app-body></app-body>
+    <app-body [recipeType]="body"></app-body>
   </div>
 </mat-sidenav-container>
