@@ -27,3 +27,8 @@ export const RECIPE_TYPES: RecipeType[] = [
   new RecipeType(20, 'Dolci', 'dessert', AUTHORS[2]),
   new RecipeType(21, 'Bevande', 'softdrinks', AUTHORS[1])
 ];
+
+export const EXTRA_SECTIONS: RecipeType[] = [
+  new RecipeType(-2, 'Credits', null, null),
+  new RecipeType(-1, 'Summary', null, null)
+];
