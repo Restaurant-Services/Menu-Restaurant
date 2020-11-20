@@ -29,15 +29,15 @@ export class RecipeType {
     return `https://${this.getLinkWithoutHTTP()}`;
   }
 
-  getLinkWithoutHTTP(): string {
-    return `www.flaticon.com`;
+  getServiceName(): string {
+    return 'Flaticon';
   }
 
-  getAuthorName(): string {
-    return this.svgAuthor.name;
+  getLinkWithoutHTTP(): string {
+    return `www.${this.getServiceName().toLowerCase()}.com`;
   }
 
   getAuthorLink(): string {
-    return `${this.getLink()}authors/${this.getAuthorName().toLowerCase()}`;
+    return `${this.getLink()}authors/${this.svgAuthor.name.toLowerCase()}`;
   }
 }
