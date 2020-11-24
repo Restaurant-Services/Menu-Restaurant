@@ -13,6 +13,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { CreditsComponent } from './credits/credits.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatrixComponent } from './matrix/matrix.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     SidenavComponent,
     BodyComponent,
-    CreditsComponent
+    CreditsComponent,
+    MatrixComponent
   ],
   imports: [
     BrowserModule,
