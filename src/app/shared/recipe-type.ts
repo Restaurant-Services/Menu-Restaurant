@@ -1,4 +1,4 @@
-import {Author} from './author';
+import { Author } from './author';
 
 export class RecipeType {
   id: number;
@@ -26,7 +26,7 @@ export class RecipeType {
   }
 
   getLink(): string {
-    return `https://${this.getLinkWithoutHTTP()}`;
+    return `https://${this.getLinkWithoutHTTP()}/`;
   }
 
   getServiceName(): string {
