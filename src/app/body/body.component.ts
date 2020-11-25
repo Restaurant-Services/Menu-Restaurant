@@ -1,5 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {RecipeType} from '../shared/recipe-type';
+import { Component, Input } from '@angular/core';
+import { RecipeType } from '../shared/recipe-type';
+import { RECIPES } from '../shared/mock/mock-recipes';
+import { Recipe } from '../shared/recipe';
 
 @Component({
   selector: 'app-body',
@@ -10,5 +12,5 @@ export class BodyComponent {
   @Input()
   recipeType: RecipeType;
 
-  constructor() { }
+  recipes: Recipe[] = RECIPES;
 }
