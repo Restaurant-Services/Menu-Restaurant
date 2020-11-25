@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {MatIconRegistry} from '@angular/material/icon';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 import {RecipeType} from '../shared/recipe-type';
-import {RECIPE_TYPES} from '../shared/mock/mock-recipe-type';
+import {RECIPE_TYPES} from '../shared/mock/mock-recipe-types';
 import {HeaderComponent} from '../header/header.component';
 
 @Component({

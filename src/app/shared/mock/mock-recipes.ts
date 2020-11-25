@@ -1,5 +1,5 @@
 import { Recipe } from '../recipe';
-import { RECIPE_TYPES } from './mock-recipe-type';
+import { RECIPE_TYPES } from './mock-recipe-types';
 
 export const RECIPES: Recipe[] = [
   new Recipe(0, '1', 'Involtini vegetariani', RECIPE_TYPES[0],
