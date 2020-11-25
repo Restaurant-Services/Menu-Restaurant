@@ -1,4 +1,4 @@
-import {Author} from '../author';
+import { Author } from '../author';
 
 export const AUTHORS: Author[] = [
   { id: 0, name: 'Eucalyp' },
