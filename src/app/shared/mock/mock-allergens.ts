@@ -1,6 +1,6 @@
 import { Allergen } from '../allergen';
 
-export const ALLERGENS_NOTES: Allergen[] = [
+export const ALLERGENS: Allergen[] = [
   { id: 0, name: 'Vegen'},
   { id: 1, name: 'Vegetariano'},
   { id: 2, name: 'Verdure' },
