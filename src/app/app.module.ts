@@ -14,6 +14,7 @@ import { MatListModule } from '@angular/material/list';
 import { CreditsComponent } from './credits/credits.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatrixComponent } from './matrix/matrix.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { MatrixComponent } from './matrix/matrix.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatGridListModule,
     MatIconModule,
     MatToolbarModule,
     MatSidenavModule,

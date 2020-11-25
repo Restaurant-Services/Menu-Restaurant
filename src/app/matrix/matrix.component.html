@@ -1,1 +1,11 @@
-<p>matrix works!</p>
+<mat-grid-list [cols]="(innerWidth / 350 > 4 ? 4 : innerWidth / 350)"
+               rowHeight="100px"
+               gutterSize="20px">
+  <ng-container *ngFor="let recipe of recipes">
+    <mat-grid-tile *ngIf="recipe.types.id === selectedRecipeType.id"
+                   colspan="1"
+                   rowspan="1">
+      {{ recipe.name }}
+    </mat-grid-tile>
+  </ng-container>
+</mat-grid-list>
