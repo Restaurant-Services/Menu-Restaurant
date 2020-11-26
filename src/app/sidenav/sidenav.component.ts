@@ -10,17 +10,15 @@ import {HeaderComponent} from '../header/header.component';
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.css']
 })
-export class SidenavComponent implements OnInit {
-  readonly recipeTypes: RecipeType[] = RECIPE_TYPES.sort((a, b) => {
-    return a.id - b.id;
-  });
+export class SidenavComponent {
+  readonly recipeTypes: RecipeType[] = RECIPE_TYPES;
 
   @Input()
   showSubmenu: boolean;
   @Input()
   headerComponent: HeaderComponent;
 
-  body: RecipeType;
+  body: RecipeType = null;
   isExpanded = false;
   isShowing = false;
 
@@ -33,10 +31,6 @@ export class SidenavComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-    this.body = this.headerComponent.sections[this.headerComponent.selectedType];
-  }
-
   mouseenter(): void {
     this.isShowing = true;
   }
@@ -44,10 +38,6 @@ export class SidenavComponent implements OnInit {
   mouseleave(): void {
     this.isShowing = false;
   }
-
-  // showMatrix(id: number): void {
-  //   this.changeRecipeType(this.recipeTypes[id]);
-  // }
 
   public changeRecipeType(type: RecipeType): void {
     console.log(`New body: ${JSON.stringify(type)}`);
