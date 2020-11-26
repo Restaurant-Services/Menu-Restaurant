@@ -5,7 +5,7 @@
     <mat-grid-tile *ngIf="recipe.types.id === selectedRecipeType.id"
                    colspan="1"
                    rowspan="1">
-      {{ recipe.name }}
+      <app-menu-item></app-menu-item>
     </mat-grid-tile>
   </ng-container>
 </mat-grid-list>
