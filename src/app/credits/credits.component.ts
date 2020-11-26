@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 import {RecipeType} from '../shared/recipe-type';
@@ -10,9 +10,10 @@ import {RECIPE_TYPES} from '../shared/mock/mock-recipe-types';
   styleUrls: ['./credits.component.css']
 })
 export class CreditsComponent {
-  readonly recipeTypes: RecipeType[] = RECIPE_TYPES.sort((a, b) => {
-    return a.id - b.id;
-  }).slice(2);
+  readonly recipeTypes: RecipeType[] = RECIPE_TYPES;
+
+  @Input()
+  showIcons = true;
 
   constructor(private matIconRegistry: MatIconRegistry,
               private domSanitizer: DomSanitizer) {

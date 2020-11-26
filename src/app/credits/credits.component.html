@@ -1,10 +1,20 @@
 <div class="body-height">
-  <h1>CREDITS</h1>
+  <h1 class="record">RICONOSCIMENTI</h1>
+  <p>MENÙ DIGITALE REALIZZATO DA:</p>
   <h1>Pelat-1</h1>
-  <div *ngFor="let type of recipeTypes" class="record">
-    <mat-icon class="icon-display" svgIcon="{{ type.svg }}" mat-list-icon></mat-icon>
-    <span class="space-left">
-      Icon made by <a href="{{ type.getAuthorLink() }}" title="{{ type.svgAuthor.name }}">{{ type.svgAuthor.name }}</a> from <a href="{{ type.getLink() }}" title="{{ type.getServiceName() }}">{{ type.getLinkWithoutHTTP() }}</a>
-    </span>
-  </div>
+  <p>Questo sito è open-source, il codice per costruirlo è consultabile online.</p>
+  <p>L'autore concede la possibilità di consultare il codice ma non di farne usi commerciali, rivendicando come proprio questo diritto</p>
+
+  <h2 *ngIf="!showIcons">Cliccare su CREDITS per avere maggiori dettagli sui contributi al progetto</h2>
+  <ng-container *ngIf="showIcons">
+    <p>ICONE REALIZZATE DA:</p>
+    <div *ngFor="let type of recipeTypes" class="record">
+      <p>
+        <mat-icon class="icon-display" svgIcon="{{ type.svg }}" mat-list-icon></mat-icon>
+        <span class="space-left">
+          <a href="{{ type.getAuthorLink() }}" title="{{ type.svgAuthor.name }}">{{ type.svgAuthor.name }}</a> su <a href="{{ type.getLink() }}" title="{{ type.getServiceName() }}">{{ type.getLinkWithoutHTTP() }}</a>
+        </span>
+      </p>
+    </div>
+  </ng-container>
 </div>
