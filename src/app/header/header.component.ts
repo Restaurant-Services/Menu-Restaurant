@@ -9,9 +9,7 @@ import { EXTRA_SECTIONS } from '../shared/mock/mock-recipe-types';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  readonly sections: RecipeType[] = EXTRA_SECTIONS.sort((a, b) => {
-    return a.id - b.id;
-  });
+  readonly sections: RecipeType[] = EXTRA_SECTIONS;
   selectedType = 0;
 
   @Input()
