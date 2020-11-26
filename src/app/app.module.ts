@@ -15,6 +15,7 @@ import { CreditsComponent } from './credits/credits.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatrixComponent } from './matrix/matrix.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MenuItemComponent } from './menu-item/menu-item.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     SidenavComponent,
     BodyComponent,
     CreditsComponent,
-    MatrixComponent
+    MatrixComponent,
+    MenuItemComponent
   ],
   imports: [
     BrowserModule,
