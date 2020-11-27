@@ -8,26 +8,28 @@ export class Recipe {
   id: number;
   code: string;
   name: string;
-  types: RecipeType;
+  type: RecipeType;
   description: string;
   price: number;
   pieces: number;
   optionalIngredients: Ingredient[] = [];
   allergens: Allergen[] = [];
+  png: string;
 
   constructor(id: number,
               code: string,
               name: string,
-              types: RecipeType,
+              type: RecipeType,
               description: string,
               price: number,
               pieces: number,
               optionalIngredients: number[],
-              allergens: number[]) {
+              allergens: number[],
+              alternativeCode: string = null) {
     this.id = id;
     this.code = code;
     this.name = name;
-    this.types = types;
+    this.type = type;
     this.description = description;
     this.price = price;
     this.pieces = pieces;
@@ -43,5 +45,8 @@ export class Recipe {
     this.allergens.sort((a: Allergen, b: Allergen) => {
       return a.id - b.id;
     });
+    this.png = (alternativeCode === null ? code.replace('VEG', '') : alternativeCode);
+    this.png = 'assets/img/' + this.png;
+    this.png += '.PNG';
   }
 }
