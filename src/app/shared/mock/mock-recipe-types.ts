@@ -8,7 +8,7 @@ export const RECIPE_TYPES: RecipeType[] = [
   new RecipeType(3, 'Riso', 'rice', AUTHORS[2]),
   new RecipeType(4, 'Spaghetti', 'hotnoodles', AUTHORS[2]),
   new RecipeType(5, 'Griglieria', 'tanghulu', AUTHORS[2]),
-  new RecipeType(6, 'Fritti', 'shrimp', AUTHORS[0], 'Fritti e Tempura'),
+  new RecipeType(6, 'Fritti', 'shrimp', AUTHORS[0], 'Fritti & Tempura'),
   new RecipeType(7, 'Carne', 'pekingduck', AUTHORS[2], 'Secondi di carne'),
   new RecipeType(8, 'Pesce', 'fish', AUTHORS[2], 'Secondi di pesce'),
   new RecipeType(9, 'Contorni wok', 'wok', AUTHORS[1], 'Contorni al Wok'),
@@ -24,10 +24,10 @@ export const RECIPE_TYPES: RecipeType[] = [
   // new RecipeType(19, 'Tartare', 'tartare', AUTHORS[]), // Secondo di pesce
   // new RecipeType(20, 'Carpaccio', '', AUTHORS[]), // Secondo di pesce
   new RecipeType(19, 'Gunkan', 'gunkan', AUTHORS[1]),
-  new RecipeType(20, 'Mix', 'bento', AUTHORS[1], 'Barche e Bentō'),
+  new RecipeType(20, 'Mix', 'bento', AUTHORS[1], 'Sushi misto & Barche'),
   new RecipeType(21, 'Dolci', 'dessert', AUTHORS[2]),
-  new RecipeType(22, 'Bevande', 'softdrinks', AUTHORS[1])
-  // new RecipeType(23, 'Vini', 'wine', AUTHORS[])
+  new RecipeType(22, 'Bevande', 'softdrinks', AUTHORS[1], 'Bevande analcoliche')
+  // new RecipeType(23, 'Vini', 'wine', AUTHORS[], 'Vini Italiani')
 ].sort((a: RecipeType, b: RecipeType) => {
   return a.id - b.id;
 });
