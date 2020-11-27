@@ -17,6 +17,7 @@ import { MatrixComponent } from './matrix/matrix.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MenuItemComponent } from './menu-item/menu-item.component';
 import { MatCardModule } from '@angular/material/card';
+import { SummaryComponent } from './summary/summary.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MatCardModule } from '@angular/material/card';
     BodyComponent,
     CreditsComponent,
     MatrixComponent,
-    MenuItemComponent
+    MenuItemComponent,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,
