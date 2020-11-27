@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatrixComponent } from './matrix/matrix.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MenuItemComponent } from './menu-item/menu-item.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MenuItemComponent } from './menu-item/menu-item.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatCardModule,
     MatGridListModule,
     MatIconModule,
     MatToolbarModule,

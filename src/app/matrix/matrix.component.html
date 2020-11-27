@@ -2,10 +2,10 @@
                rowHeight="100px"
                gutterSize="20px">
   <ng-container *ngFor="let recipe of recipes">
-    <mat-grid-tile *ngIf="recipe.types.id === selectedRecipeType.id"
+    <mat-grid-tile *ngIf="recipe.type.id === selectedRecipeType.id"
                    colspan="1"
                    rowspan="1">
-      <app-menu-item></app-menu-item>
+      <app-menu-item [menuItem]="recipe"></app-menu-item>
     </mat-grid-tile>
   </ng-container>
 </mat-grid-list>

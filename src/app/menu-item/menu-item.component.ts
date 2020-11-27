@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Recipe } from '../shared/recipe';
 
 @Component({
   selector: 'app-menu-item',
   templateUrl: './menu-item.component.html',
   styleUrls: ['./menu-item.component.css']
 })
-export class MenuItemComponent implements OnInit {
+export class MenuItemComponent {
+  @Input()
+  menuItem: Recipe;
 
-  constructor() { }
+  @Input()
+  qty = 0;
 
-  ngOnInit(): void {
+  plus1(): void {
+    this.qty += 1;
   }
 
+  minus1(): void {
+    if (this.qty > 0) {
+      this.qty -= 1;
+    }
+  }
 }
