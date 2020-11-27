@@ -5,12 +5,14 @@ export class RecipeType {
   name: string;
   svg: string;
   svgAuthor: Author;
+  displayName: string;
 
-  constructor(id: number, name: string, svg: string, svgAuthor: Author) {
+  constructor(id: number, name: string, svg: string, svgAuthor: Author, displayName: string = name) {
     this.id = id;
     this.name = name;
     this.svg = svg;
     this.svgAuthor = svgAuthor;
+    this.displayName = displayName;
   }
 
   getSVGPathFromComponent(): string {
