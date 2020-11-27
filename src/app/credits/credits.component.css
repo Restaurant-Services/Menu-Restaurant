@@ -1,13 +1,7 @@
 .space-left {
-  margin-left: 25px;
+  margin-left: 1.5em;
 }
 
-h1, h2, p {
+h2, p {
   text-align: center;
-}
-
-.record {
-  align-content: center;
-  margin-top: 25px;
-  margin-bottom: 25px;
 }
