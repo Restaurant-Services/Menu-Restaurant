@@ -3,7 +3,7 @@ app-body {
 }
 
 .example-container {
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 0.063em solid rgba(0, 0, 0, 0.5);
 }
 
 .example-sidenav-content {
@@ -18,7 +18,7 @@ app-body {
 
 .full-width {
   width: 100%;
-  margin-left: 20px;
+  margin-left: 1.25em;
 }
 
 .menu-button {
@@ -35,7 +35,7 @@ app-body {
   transition: transform 300ms ease;
   transform: scaleY(0);
   transform-origin: top;
-  padding-left: 30px;
+  padding-left: 1.9em;
 }
 
 .submenu.expanded {
