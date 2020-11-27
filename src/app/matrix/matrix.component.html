@@ -1,6 +1,9 @@
-<mat-grid-list [cols]="(innerWidth / 350 > 4 ? 4 : innerWidth / 350)"
-               rowHeight="100px"
-               gutterSize="20px">
+<h1 class="center-text">
+  {{ selectedRecipeType.displayName }}
+</h1>
+<mat-grid-list [cols]="innerWidth / 350"
+               rowHeight="20em"
+               gutterSize="0.5em">
   <ng-container *ngFor="let recipe of recipes">
     <mat-grid-tile *ngIf="recipe.type.id === selectedRecipeType.id"
                    colspan="1"

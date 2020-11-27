@@ -14,13 +14,23 @@ export class MatrixComponent implements OnInit {
   selectedRecipeType: RecipeType;
 
   innerWidth = 1050;
+  recipesPerType = 0;
 
   ngOnInit(): void {
     this.onResize();
+    this.recipesPerSelectedType();
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(): void {
     this.innerWidth = window.innerWidth;
+  }
+
+  private recipesPerSelectedType(): void {
+    this.recipes.forEach((value: Recipe) => {
+      if (value.type.id === this.selectedRecipeType.id) {
+        this.recipesPerType++;
+      }
+    });
   }
 }
