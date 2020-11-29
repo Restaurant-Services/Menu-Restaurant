@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {Recipe} from './shared/recipe';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +6,4 @@ import {Recipe} from './shared/recipe';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  summary: Recipe[] = [];
 }
