@@ -1,18 +1,41 @@
-<div class="body-height">
-  <h1>RICONOSCIMENTI</h1>
-  <p>MENÙ DIGITALE REALIZZATO DA:</p>
-  <h1>Pelat-1</h1>
-  <p>Questo sito è open-source, il codice per costruirlo è consultabile online.</p>
-  <p>L'autore concede la possibilità di consultare il codice ma non di farne usi commerciali, rivendicando come proprio questo diritto</p>
+<div class="body-height margins">
+  <h1>ISTRUZIONI</h1>
+  <h2>Non aggiornare questo sito!</h2>
+  <p>Per non perdere l'ordine, <u>non</u> si deve aggiornare questa pagina (swipe verso il basso o F5).</p>
+  <p>Persino tornare indietro nella cronologia è sconsigliato.</p>
+  <p>
+    Questo sito è sprovvisto di qualsiasi sistema di salvataggio dati, non possiamo sapere nulla su di voi,
+    <u>neanche il vostro ordine</u>.
+  </p>
+  <h2>Le note sono importanti!</h2>
+  <p>Non tutti vogliono il Philadelphia sul proprio Nigiri Sake Flower, magari 2 o più congiunti allo stesso tavolo la pensano diversamente.</p>
+  <p class="center-text">Risolvi il problema scrivendo una nota!</p>
+  <p>Nell'elenco verrà inserito un altro elemento vuoto dello stesso piatto per poter continuare a personalizzare la richiesta!</p>
 
-  <h2 *ngIf="!showIcons">Cliccare su CREDITS per avere maggiori dettagli sui contributi al progetto</h2>
+  <h2 *ngIf="!showIcons">Cliccare su CREDITS per avere maggiori dettagli sui contributi al progetto e sulle istruzioni</h2>
   <ng-container *ngIf="showIcons">
-    <p>ICONE REALIZZATE DA:</p>
+    <h1>MENÙ DIGITALE REALIZZATO DA:</h1>
+    <h2>Pelat-1</h2>
+    <p>Questo sito è open-source, il codice per costruirlo è consultabile online.</p>
+    <p>
+      L'autore concede la possibilità di consultare il codice ma non di farne usi commerciali,
+      <br>
+      rivendicando come proprio questo diritto
+    </p>
+    <h1>ICONE REALIZZATE DA:</h1>
     <div *ngFor="let type of recipeTypes" class="record">
-      <p>
+      <p class="center-text">
         <mat-icon class="icon-display" svgIcon="{{ type.svg }}" mat-list-icon></mat-icon>
         <span class="space-left">
-          <a href="{{ type.getAuthorLink() }}" title="{{ type.svgAuthor.name }}">{{ type.svgAuthor.name }}</a> su <a href="{{ type.getLink() }}" title="{{ type.getServiceName() }}">{{ type.getLinkWithoutHTTP() }}</a>
+          <a href="{{ type.getAuthorLink() }}"
+             title="{{ type.svgAuthor.name }}">
+            {{ type.svgAuthor.name }}
+          </a>
+          su
+          <a href="{{ type.getLink() }}"
+             title="{{ type.getServiceName() }}">
+            {{ type.getLinkWithoutHTTP() }}
+          </a>
         </span>
       </p>
     </div>

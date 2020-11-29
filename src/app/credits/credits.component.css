@@ -4,8 +4,14 @@ h1 {
   text-align: center;
 }
 
-h2, p {
+h2 {
   text-align: center;
+}
+
+.margins {
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  margin-bottom: 1.5em;
 }
 
 .space-left {
