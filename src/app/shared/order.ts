@@ -10,7 +10,7 @@ export class Order {
   constructor(recipe: Recipe,
               quantity: number = 0,
               description: string = '',
-              ingredients: Ingredient[] = recipe.optionalIngredients) {
+              ingredients: Ingredient[] = recipe.ingredients) {
     this.recipe = recipe;
     this.quantity = quantity;
     this.description = description;

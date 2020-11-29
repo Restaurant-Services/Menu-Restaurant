@@ -1,8 +1,9 @@
-import { RecipeType } from './recipe-type';
-import { Ingredient } from './ingredient';
 import { Allergen } from './allergen';
+import { Ingredient } from './ingredient';
+import { RecipeType } from './recipe-type';
 import { ALLERGENS } from './mock/mock-allergens';
 import { INGREDIENTS } from './mock/mock-ingredients';
+// import { OptionalIngredient } from './optional-ingredient';
 
 export class Recipe {
   id: number;
@@ -12,7 +13,8 @@ export class Recipe {
   description: string;
   price: number;
   pieces: number;
-  optionalIngredients: Ingredient[] = [];
+  ingredients: Ingredient[] = [];
+  // ingredients: OptionalIngredient[] = [];
   allergens: Allergen[] = [];
   png: string;
 
@@ -23,7 +25,8 @@ export class Recipe {
               description: string,
               price: number,
               pieces: number,
-              optionalIngredients: number[],
+              ingredients: number[],
+              // optionalIngredients: number[],
               allergens: number[],
               alternativeCode: string = null) {
     this.id = id;
@@ -33,10 +36,14 @@ export class Recipe {
     this.description = description;
     this.price = price;
     this.pieces = pieces;
-    optionalIngredients.forEach((optionalIngredient: number) => {
-      this.optionalIngredients.push(INGREDIENTS[optionalIngredient]);
+    ingredients.forEach((ingredient: number) => {
+      this.ingredients.push(INGREDIENTS[ingredient]);
+      // this.ingredients.push(new OptionalIngredient(INGREDIENTS[ingredient]));
     });
-    this.optionalIngredients.sort((a: Ingredient, b: Ingredient) => {
+    // optionalIngredients.forEach((ingredient: number) => {
+    //   this.ingredients.push(new OptionalIngredient(INGREDIENTS[ingredient], true));
+    // });
+    this.ingredients.sort((a: Ingredient, b: Ingredient) => {
       return a.id - b.id;
     });
     allergens.forEach((allergen: number) => {
