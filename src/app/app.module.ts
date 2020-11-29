@@ -18,6 +18,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MenuItemComponent } from './menu-item/menu-item.component';
 import { MatCardModule } from '@angular/material/card';
 import { SummaryComponent } from './summary/summary.component';
+import { ModalModule } from './modal/modal.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { SummaryComponent } from './summary/summary.component';
     SummaryComponent
   ],
   imports: [
+    ModalModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
