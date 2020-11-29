@@ -14,8 +14,6 @@ export class SidenavComponent {
   readonly recipeTypes: RecipeType[] = RECIPE_TYPES;
 
   @Input()
-  showSubmenu: boolean;
-  @Input()
   headerComponent: HeaderComponent;
 
   body: RecipeType = null;
@@ -40,11 +38,16 @@ export class SidenavComponent {
   }
 
   public changeRecipeType(type: RecipeType): void {
-    console.log(`New body: ${JSON.stringify(type)}`);
     this.body = type;
+    this.reduceSidenav();
   }
 
   public expandReduceNav(expand: boolean = !this.isExpanded): void {
     this.isExpanded = expand;
+  }
+
+  private reduceSidenav(): void {
+    this.isExpanded = false;
+    this.isShowing = false;
   }
 }
