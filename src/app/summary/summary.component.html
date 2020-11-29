@@ -1,1 +1,85 @@
-<p>summary works!</p>
+<div class="container-fluid">
+  <h1>RIEPILOGO</h1>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" class="center-text margin-vertical-auto">Codice</th>
+            <th scope="col" class="center-text margin-vertical-auto">Piatto</th>
+            <th scope="col" class="center-text margin-vertical-auto">Quantità</th>
+            <th scope="col" class="center-text margin-vertical-auto">Descrizione</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="orderArray.length === 0">
+            <th colspan="4" class="center-text margin-vertical-auto">NESSUN ELEMENTO</th>
+          </tr>
+          <tr *ngFor="let order of orderArray; let i = index">
+            <td scope="row">
+              <table class="table-buttons margin-vertical-auto">
+                <tr>
+                  <td class="table-buttons-elem center-text">
+                    {{ order.recipe.code }}
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td scope="row">
+              <table class="table-buttons margin-vertical-auto">
+                <tr>
+                  <td class="table-buttons-elem center-text">
+                    {{ order.recipe.name }}
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td scope="row">
+              <table class="table-buttons margin-vertical-auto">
+                <tr>
+                  <td class="table-buttons-elem">
+                    <button type="button"
+                            class="btn btn-primary float-l reduce-button"
+                            (click)="plus1(i)">
+                      <mat-icon>exposure_plus_1</mat-icon>
+                    </button>
+                  </td>
+                  <td class="table-buttons-space"></td>
+                  <td class="table-buttons-elem">
+                    <p class="center-text no-margin" [innerText]="order.quantity.toString(10)"></p>
+                  </td>
+                  <td class="table-buttons-space"></td>
+                  <td class="table-buttons-elem">
+                    <button type="button"
+                            class="btn btn-danger float-r reduce-button"
+                            (click)="minus1(i)">
+                      <mat-icon *ngIf="order.quantity > 0">exposure_neg_1</mat-icon>
+                      <mat-icon *ngIf="order.quantity === 0">close</mat-icon>
+                    </button>
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td scope="row">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 reset-padding">
+                    <textarea #desc class="form-control"
+                              id="exampleFormControlTextarea1"
+                              rows="1">{{ order.description }}</textarea>
+                  </div>
+                  <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 reset-padding">
+                    <button type="button" class="btn btn-primary" (click)="note(desc.value, i)">
+                      NOTA
+                    </button>
+                  </div>
+                  <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
