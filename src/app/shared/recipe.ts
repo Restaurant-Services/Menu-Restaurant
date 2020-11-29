@@ -33,14 +33,14 @@ export class Recipe {
     this.description = description;
     this.price = price;
     this.pieces = pieces;
-    optionalIngredients.forEach((value: number) => {
-      this.optionalIngredients.push(INGREDIENTS[value]);
+    optionalIngredients.forEach((optionalIngredient: number) => {
+      this.optionalIngredients.push(INGREDIENTS[optionalIngredient]);
     });
     this.optionalIngredients.sort((a: Ingredient, b: Ingredient) => {
       return a.id - b.id;
     });
-    allergens.forEach((value: number) => {
-      this.allergens.push(ALLERGENS[value]);
+    allergens.forEach((allergen: number) => {
+      this.allergens.push(ALLERGENS[allergen]);
     });
     this.allergens.sort((a: Allergen, b: Allergen) => {
       return a.id - b.id;
@@ -48,5 +48,9 @@ export class Recipe {
     this.png = (alternativeCode === null ? code.replace('VEG', '') : alternativeCode);
     this.png = 'assets/img/' + this.png;
     this.png += '.PNG';
+  }
+
+  public equals(compare: Recipe): boolean {
+    return this.id === compare.id && this.code === compare.code;
   }
 }
