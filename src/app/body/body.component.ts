@@ -29,6 +29,11 @@ export class BodyComponent {
     this.sortOrderArray();
   }
 
+  updateOrders(orders: Order[]): void {
+    this.orderArray = orders;
+    this.sortOrderArray();
+  }
+
   private sortOrderArray(): void {
     this.orderArray.sort((a: Order, b: Order) => {
       if (!a.recipe.equals(b.recipe)) {

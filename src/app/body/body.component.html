@@ -1,6 +1,8 @@
 <app-credits *ngIf="recipeType === null || recipeType.id === -2"
              [showIcons]="recipeType !== null"></app-credits>
-<app-summary *ngIf="recipeType && recipeType.id === -1"></app-summary>
+<app-summary *ngIf="recipeType && recipeType.id === -1"
+             [orderArray]="orderArray"
+             (orderEmit)="updateOrders($event)"></app-summary>
 <app-matrix *ngIf="recipeType && recipeType.id > -1"
             [recipes]="recipes"
             [selectedRecipeType]="recipeType"
