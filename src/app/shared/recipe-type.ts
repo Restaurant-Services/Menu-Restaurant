@@ -15,6 +15,14 @@ export class RecipeType {
     this.displayName = displayName;
   }
 
+  public static sort(a: RecipeType, b: RecipeType): number {
+    let sort: number = a.id - b.id;
+    if (sort === 0) {
+      sort = a.name.localeCompare(b.name);
+    }
+    return sort;
+  }
+
   getSVGPathFromComponent(): string {
     return `../../${this.getSVGPathFromRoot()}`;
   }

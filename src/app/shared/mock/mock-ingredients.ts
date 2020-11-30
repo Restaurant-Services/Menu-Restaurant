@@ -31,6 +31,4 @@ export const INGREDIENTS: Ingredient[] = [
   new Ingredient(27, 'Wakame'),
   new Ingredient(28, 'Wasabi'),
   new Ingredient(29, 'Zenzero')
-].sort((a: Ingredient, b: Ingredient) => {
-  return a.id - b.id;
-});
+].sort(Ingredient.sort);

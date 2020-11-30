@@ -48,20 +48,24 @@ export class Recipe {
     this.png = (alternativeCode === null ? code.replace('VEG', '') : alternativeCode);
     this.png = 'assets/img/' + this.png;
     this.png += '.PNG';
-    this.sort();
+    this.sortArrays();
+  }
+
+  public static sort(a: Recipe, b: Recipe): number {
+    let sort: number = a.id - b.id;
+    if (sort === 0) {
+      sort = a.code.localeCompare(b.code);
+    }
+    return sort;
   }
 
   public equals(compare: Recipe): boolean {
     return this.id === compare.id && this.code === compare.code;
   }
 
-  private sort(): void {
-    this.optionalIngredients.sort((a: Ingredient, b: Ingredient) => {
-      return a.id - b.id;
-    });
-    this.allergens.sort((a: Allergen, b: Allergen) => {
-      return a.id - b.id;
-    });
+  private sortArrays(): void {
+    this.optionalIngredients.sort(Ingredient.sort);
+    this.allergens.sort(Allergen.sort);
   }
 
   private noClones(): void {

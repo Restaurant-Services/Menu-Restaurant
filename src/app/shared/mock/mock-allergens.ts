@@ -17,6 +17,4 @@ export const ALLERGENS: Allergen[] = [
   new Allergen(13, 'Pesce Surgelato'),
   new Allergen(14, 'Abbattuto'),
   new Allergen(15, 'Surgelato')
-].sort((a: Allergen, b: Allergen) => {
-  return a.id - b.id;
-});
+].sort(Allergen.sort);

@@ -28,13 +28,9 @@ export const RECIPE_TYPES: RecipeType[] = [
   new RecipeType(21, 'Dolci', 'dessert', AUTHORS[2]),
   new RecipeType(22, 'Bevande', 'softdrinks', AUTHORS[1], 'Bevande analcoliche')
   // new RecipeType(23, 'Vini', 'wine', AUTHORS[], 'Vini Italiani')
-].sort((a: RecipeType, b: RecipeType) => {
-  return a.id - b.id;
-});
+].sort(RecipeType.sort);
 
 export const EXTRA_SECTIONS: RecipeType[] = [
   new RecipeType(-2, 'Credits', null, null),
   new RecipeType(-1, 'Summary', null, null)
-].sort((a: RecipeType, b: RecipeType) => {
-  return a.id - b.id;
-});
+].sort(RecipeType.sort);

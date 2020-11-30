@@ -14,9 +14,26 @@ export class Order {
     this.recipe = recipe;
     this.quantity = quantity;
     this.description = description;
-    this.ingredients = optionalIngredients.sort((a: Ingredient, b: Ingredient) => {
-      return a.id - b.id;
-    });
+    this.ingredients = optionalIngredients.sort(Ingredient.sort);
+  }
+
+  public static sort(a: Order, b: Order): number {
+    let sort: number = Recipe.sort(a.recipe, b.recipe);
+    if (sort === 0) {
+      sort = a.ingredients.length - b.ingredients.length;
+      if (sort === 0) {
+        for (let i = 0; i < a.ingredients.length; i++) {
+          sort = Ingredient.sort(a.ingredients[i], b.ingredients[i]);
+          if (sort !== 0) {
+            break;
+          }
+        }
+        if (sort === 0) {
+          sort = a.description.localeCompare(b.description);
+        }
+      }
+    }
+    return sort;
   }
 
   public updateQty(order: Order, descrSensitive: boolean): boolean {

@@ -8,7 +8,15 @@ export class Ingredient {
   constructor(id: number, name: string, allergens: Allergen[] = []) {
     this.id = id;
     this.name = name;
-    this.allergens = allergens;
+    this.allergens = allergens.sort(Allergen.sort);
+  }
+
+  public static sort(a: Ingredient, b: Ingredient): number {
+    let sort: number = a.id - b.id;
+    if (sort === 0) {
+      sort = a.name.localeCompare(b.name);
+    }
+    return sort;
   }
 
   public equals(compare: Ingredient): boolean {

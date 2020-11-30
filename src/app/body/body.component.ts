@@ -35,14 +35,6 @@ export class BodyComponent {
   }
 
   private sortOrderArray(): void {
-    this.orderArray.sort((a: Order, b: Order) => {
-      if (!a.recipe.equals(b.recipe)) {
-        return a.recipe.id - b.recipe.id;
-      }
-      if (a.ingredients.length !== b.ingredients.length) {
-        return b.ingredients.length - a.ingredients.length;
-      }
-      return b.description.length - a.description.length;
-    });
+    this.orderArray.sort(Order.sort);
   }
 }

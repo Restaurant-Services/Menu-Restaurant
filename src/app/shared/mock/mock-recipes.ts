@@ -931,6 +931,4 @@ export const RECIPES: Recipe[] = [
     '660 ml',
     4.5, null, [],
     [], 'heineken')
-].sort((a: Recipe, b: Recipe) => {
-  return a.id - b.id;
-});
+].sort(Recipe.sort);
