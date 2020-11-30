@@ -6,7 +6,7 @@
     <img [src]="menuItem.png"
          width="200em"
          height="100em"
-         class="space">
+         class="space" (click)="openModalDialog()">
   </ng-container>
   <ng-container *ngIf="!menuItem.code">
     <table class="table-title">
