@@ -10,11 +10,11 @@ export class Order {
   constructor(recipe: Recipe,
               quantity: number = 0,
               description: string = '',
-              ingredients: Ingredient[] = recipe.ingredients) {
+              optionalIngredients: Ingredient[] = recipe.optionalIngredients) {
     this.recipe = recipe;
     this.quantity = quantity;
     this.description = description;
-    this.ingredients = ingredients.sort((a: Ingredient, b: Ingredient) => {
+    this.ingredients = optionalIngredients.sort((a: Ingredient, b: Ingredient) => {
       return a.id - b.id;
     });
   }

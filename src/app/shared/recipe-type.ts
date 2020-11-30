@@ -42,4 +42,8 @@ export class RecipeType {
   getAuthorLink(): string {
     return `${this.getLink()}authors/${this.svgAuthor.name.toLowerCase()}`;
   }
+
+  public equals(compare: RecipeType): boolean {
+    return this.id === compare.id && this.name === compare.name;
+  }
 }

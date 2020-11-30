@@ -1,22 +1,22 @@
 import { Allergen } from '../allergen';
 
 export const ALLERGENS: Allergen[] = [
-  { id: 0, name: 'Vegen'},
-  { id: 1, name: 'Vegetariano'},
-  { id: 2, name: 'Verdure' },
-  { id: 3, name: 'Glutine' },
-  { id: 4, name: 'Soia' },
-  { id: 5, name: 'Piccante' },
-  { id: 6, name: 'Uova' },
-  { id: 7, name: 'Frutta e Guscio' },
-  { id: 8, name: 'Mais' },
-  { id: 9, name: 'Latticini' },
-  { id: 10, name: 'Maiale' },
-  { id: 11, name: 'Crostacei' },
-  { id: 12, name: 'Pesce' },
-  { id: 13, name: 'Pesce Surgelato' },
-  { id: 14, name: 'Abbattuto' },
-  { id: 15, name: 'Surgelato' }
+  new Allergen(0, 'Vegen'),
+  new Allergen(1, 'Vegetariano'),
+  new Allergen(2, 'Verdure'),
+  new Allergen(3, 'Glutine'),
+  new Allergen(4, 'Soia'),
+  new Allergen(5, 'Piccante'),
+  new Allergen(6, 'Uova'),
+  new Allergen(7, 'Frutta e Guscio'),
+  new Allergen(8, 'Mais'),
+  new Allergen(9, 'Latticini'),
+  new Allergen(10, 'Maiale'),
+  new Allergen(11, 'Crostacei'),
+  new Allergen(12, 'Pesce'),
+  new Allergen(13, 'Pesce Surgelato'),
+  new Allergen(14, 'Abbattuto'),
+  new Allergen(15, 'Surgelato')
 ].sort((a: Allergen, b: Allergen) => {
   return a.id - b.id;
 });

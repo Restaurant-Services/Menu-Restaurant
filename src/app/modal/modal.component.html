@@ -22,13 +22,13 @@
         </div>
       </div>
     </ng-container>
-    <ng-container *ngIf="data.ingredients.length > 0">
+    <ng-container *ngIf="data.optionalIngredients.length > 0">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <h2 class="center-text">Ingredienti opzionali</h2>
         </div>
       </div>
-      <div *ngFor="let ingredient of data.ingredients" class="row">
+      <div *ngFor="let ingredient of data.optionalIngredients" class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <label>
             <input type="checkbox"
