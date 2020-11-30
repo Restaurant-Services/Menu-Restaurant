@@ -1,20 +1,22 @@
 import { Allergen } from '../allergen';
 
+let index = 0;
+
 export const ALLERGENS: Allergen[] = [
-  new Allergen(0, 'Vegen'),
-  new Allergen(1, 'Vegetariano'),
-  new Allergen(2, 'Verdure'),
-  new Allergen(3, 'Glutine'),
-  new Allergen(4, 'Soia'),
-  new Allergen(5, 'Piccante'),
-  new Allergen(6, 'Uova'),
-  new Allergen(7, 'Frutta e Guscio'),
-  new Allergen(8, 'Mais'),
-  new Allergen(9, 'Latticini'),
-  new Allergen(10, 'Maiale'),
-  new Allergen(11, 'Crostacei'),
-  new Allergen(12, 'Pesce'),
-  new Allergen(13, 'Pesce Surgelato'),
-  new Allergen(14, 'Abbattuto'),
-  new Allergen(15, 'Surgelato')
+  new Allergen(index++, 'Vegen'),
+  new Allergen(index++, 'Vegetariano'),
+  new Allergen(index++, 'Verdure'),
+  new Allergen(index++, 'Glutine'),
+  new Allergen(index++, 'Soia'),
+  new Allergen(index++, 'Piccante'),
+  new Allergen(index++, 'Uova'),
+  new Allergen(index++, 'Frutta e Guscio'),
+  new Allergen(index++, 'Mais'),
+  new Allergen(index++, 'Latticini'),
+  new Allergen(index++, 'Maiale'),
+  new Allergen(index++, 'Crostacei'),
+  new Allergen(index++, 'Pesce'),
+  new Allergen(index++, 'Pesce Surgelato'),
+  new Allergen(index++, 'Abbattuto'),
+  new Allergen(index++, 'Surgelato')
 ].sort(Allergen.sort);
