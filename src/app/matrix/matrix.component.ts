@@ -1,8 +1,8 @@
 import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
-import { Recipe } from '../shared/recipe';
-import { RecipeType } from '../shared/recipe-type';
 import { SummaryComponent } from '../summary/summary.component';
 import { Order } from '../shared/order';
+import { Recipe } from '../shared/recipe';
+import { RecipeType } from '../shared/recipe-type';
 
 @Component({
   selector: 'app-matrix',

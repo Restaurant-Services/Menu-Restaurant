@@ -3,11 +3,13 @@ import { Allergen } from './allergen';
 export class Ingredient {
   id: number;
   name: string;
+  noteName: string;
   allergens: Allergen[];
 
-  constructor(id: number, name: string, allergens: Allergen[] = []) {
+  constructor(id: number, name: string, allergens: Allergen[] = [], noteName: string = name.toLowerCase()) {
     this.id = id;
     this.name = name;
+    this.noteName = noteName;
     this.allergens = allergens.sort(Allergen.sort);
   }
 

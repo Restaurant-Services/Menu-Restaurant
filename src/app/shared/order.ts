@@ -1,20 +1,20 @@
-import { Ingredient } from './ingredient';
+import { OptionalIngredient } from './optional-ingredient';
 import { Recipe } from './recipe';
 
 export class Order {
   recipe: Recipe;
   quantity: number;
   description: string;
-  ingredients: Ingredient[];
+  ingredients: OptionalIngredient[];
 
   constructor(recipe: Recipe,
               quantity: number = 0,
               description: string = '',
-              optionalIngredients: Ingredient[] = recipe.optionalIngredients) {
+              optionalIngredients: OptionalIngredient[] = recipe.optionalIngredients) {
     this.recipe = recipe;
     this.quantity = quantity;
     this.description = description;
-    this.ingredients = optionalIngredients.sort(Ingredient.sort);
+    this.ingredients = optionalIngredients.sort(OptionalIngredient.sort);
   }
 
   public static sort(a: Order, b: Order): number {
@@ -23,7 +23,7 @@ export class Order {
       sort = a.ingredients.length - b.ingredients.length;
       if (sort === 0) {
         for (let i = 0; i < a.ingredients.length; i++) {
-          sort = Ingredient.sort(a.ingredients[i], b.ingredients[i]);
+          sort = OptionalIngredient.sort(a.ingredients[i], b.ingredients[i]);
           if (sort !== 0) {
             break;
           }
@@ -50,19 +50,15 @@ export class Order {
     return false;
   }
 
-  equals(order: Order, descrSensitive: boolean): boolean {
+  public equals(order: Order, checkedSensitive: boolean): boolean {
     if (!this.recipe.equals(order.recipe)) {
-      return false;
-    }
-    if (descrSensitive && this.description !== order.description) {
       return false;
     }
     if (this.ingredients.length !== order.ingredients.length) {
       return false;
     }
-    this.ingredients.forEach((ingredient: Ingredient, index: number) => {
-      const comp = order.ingredients[index];
-      if (ingredient.id !== comp.id || ingredient.name !== comp.name) {
+    this.ingredients.forEach((ingredient: OptionalIngredient, index: number) => {
+      if (!ingredient.equals(order.ingredients[index], checkedSensitive)) {
         return false;
       }
     });

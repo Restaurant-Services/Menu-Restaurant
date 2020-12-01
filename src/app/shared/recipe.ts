@@ -1,6 +1,6 @@
 import { Allergen } from './allergen';
 import { Ingredient } from './ingredient';
-// import { OptionalIngredient } from './optional-ingredient';
+import { OptionalIngredient } from './optional-ingredient';
 import { RecipeType } from './recipe-type';
 import { ALLERGENS } from './mock/mock-allergens';
 import { INGREDIENTS } from './mock/mock-ingredients';
@@ -13,7 +13,7 @@ export class Recipe {
   description: string;
   price: number;
   pieces: number;
-  optionalIngredients: Ingredient[] = [];
+  optionalIngredients: OptionalIngredient[] = [];
   allergens: Allergen[] = [];
   png: string;
 
@@ -26,8 +26,8 @@ export class Recipe {
               pieces: number,
               optIngredients: number[],
               allergens: number[],
-              alternativeCode: string = null) {
-              // mustIngredients: number[] = []) {
+              alternativeCode: string = null,
+              mustIngredients: number[] = []) {
     this.id = id;
     this.code = code;
     this.name = name;
@@ -36,12 +36,11 @@ export class Recipe {
     this.price = price;
     this.pieces = pieces;
     optIngredients.forEach((ingredientId: number) => {
-      this.optionalIngredients.push(INGREDIENTS[ingredientId]);
-      // this.optionalIngredients.push(new OptionalIngredient(INGREDIENTS[ingredientId]));
+      this.optionalIngredients.push(new OptionalIngredient(INGREDIENTS[ingredientId], true));
     });
-    // mustIngredients.forEach((ingredientId: number) => {
-    //   this.optionalIngredients.push(new OptionalIngredient(INGREDIENTS[ingredientId], true));
-    // });
+    mustIngredients.forEach((ingredientId: number) => {
+      this.optionalIngredients.push(new OptionalIngredient(INGREDIENTS[ingredientId], false));
+    });
     allergens.forEach((allergen: number) => {
       this.allergens.push(ALLERGENS[allergen]);
     });
@@ -59,16 +58,27 @@ export class Recipe {
     return sort;
   }
 
+  getIngredients(optional?: boolean): Ingredient[] {
+    const ingredients: Ingredient[] = [];
+    this.optionalIngredients.forEach((a: OptionalIngredient) => {
+      if (optional === undefined || a.optional === optional) {
+        ingredients.push(a.ingredient);
+      }
+    });
+    ingredients.sort(Ingredient.sort);
+    return ingredients;
+  }
+
   public equals(compare: Recipe): boolean {
     return this.id === compare.id && this.code === compare.code;
   }
 
   private sortArrays(): void {
-    this.optionalIngredients.sort(Ingredient.sort);
+    this.optionalIngredients.sort(OptionalIngredient.sort);
     this.allergens.sort(Allergen.sort);
   }
 
-  private noClones(): void {
+  /*private noClones(): void {
     for (let i = 1; i < this.optionalIngredients.length; i++) {
       if (this.optionalIngredients[i - 1].equals(this.optionalIngredients[i])) {
         this.optionalIngredients.splice(i, 1);
@@ -81,5 +91,5 @@ export class Recipe {
         i--;
       }
     }
-  }
+  }*/
 }

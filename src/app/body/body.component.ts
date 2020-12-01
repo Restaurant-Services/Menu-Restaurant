@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
+import { Order } from '../shared/order';
+import { Recipe } from '../shared/recipe';
 import { RecipeType } from '../shared/recipe-type';
 import { RECIPES } from '../shared/mock/mock-recipes';
-import { Recipe } from '../shared/recipe';
-import { Order } from '../shared/order';
 
 @Component({
   selector: 'app-body',
