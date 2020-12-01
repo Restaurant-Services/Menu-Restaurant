@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+// import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+// import { ModalComponent } from '../modal/modal.component';
 import { Order } from '../shared/order';
 
 @Component({
@@ -11,6 +13,14 @@ export class SummaryComponent implements OnInit {
   orderArray: Order[];
   @Output()
   orderEmit: EventEmitter<Order[]> = new EventEmitter();
+
+  /*private modalDialogConfig: MatDialogConfig<Order> = {
+    width: '30em',
+    height: '20em',
+    autoFocus: false
+  };*/
+
+  // constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
     for (let j = 0; j < this.orderArray.length; j++) {
@@ -37,6 +47,17 @@ export class SummaryComponent implements OnInit {
       this.orderArray.splice(index, 1);
     }
     this.emit();
+  }
+
+  openModalDialog(order: Order): void {
+    console.log('Here should be the code to open the modal and change Ingredients, here the order: ' + JSON.stringify(order));
+    /*this.modalDialogConfig.data = order;
+    const modalDialogRef = this.dialog.open(ModalComponent, this.modalDialogConfig);
+    modalDialogRef.afterClosed().subscribe((result: Order) => {
+      if (result) {
+        console.log(JSON.stringify(result));
+      }
+    });*/
   }
 
   note(note: string, index: number): void {

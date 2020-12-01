@@ -29,7 +29,11 @@ export class Order {
           }
         }
         if (sort === 0) {
-          sort = a.description.localeCompare(b.description);
+          sort = a.description.length === 0 ? 1 : 0;
+          sort -= b.description.length === 0 ? 0 : 1;
+          if (sort === 0) {
+            sort = a.description.localeCompare(b.description);
+          }
         }
       }
     }

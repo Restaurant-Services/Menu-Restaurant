@@ -1,10 +1,10 @@
-<app-credits *ngIf="recipeType === null || recipeType.id === -2"
-             [showIcons]="recipeType !== null"></app-credits>
-<app-summary *ngIf="recipeType && recipeType.id === -1"
-             [orderArray]="orderArray"
+<app-credits *ngIf="type === null || type.id === -2"
+             [showCredits]="type !== null"></app-credits>
+<app-summary *ngIf="type && type.id === -1"
+             [orderArray]="orders"
              (orderEmit)="updateOrders($event)"></app-summary>
-<app-matrix *ngIf="recipeType && recipeType.id > -1"
+<app-matrix *ngIf="type && type.id > -1"
             [recipes]="recipes"
-            [selectedRecipeType]="recipeType"
-            [orderArray]="orderArray"
+            [selectedRecipeType]="type"
+            [orderArray]="orders"
             (ordering)="updateOrder($event)"></app-matrix>

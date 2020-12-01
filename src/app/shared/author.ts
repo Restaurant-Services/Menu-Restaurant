@@ -14,5 +14,4 @@ export class Author {
     }
     return sort;
   }
-
 }

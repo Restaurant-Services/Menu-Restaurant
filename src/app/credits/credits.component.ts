@@ -13,7 +13,7 @@ export class CreditsComponent {
   readonly recipeTypes: RecipeType[] = RECIPE_TYPES;
 
   @Input()
-  showIcons = true;
+  showCredits = true;
 
   constructor(private matIconRegistry: MatIconRegistry,
               private domSanitizer: DomSanitizer) {

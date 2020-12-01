@@ -10,7 +10,7 @@ import { EXTRA_SECTIONS } from '../shared/mock/mock-recipe-types';
 })
 export class HeaderComponent {
   readonly sections: RecipeType[] = EXTRA_SECTIONS;
-  selectedType = 0;
+  selectedSectionID = 0;
 
   @Input()
   sidenavComponent: SidenavComponent;
@@ -20,17 +20,17 @@ export class HeaderComponent {
   }
 
   showCredits(): void {
-    this.selectedType = 0;
+    this.selectedSectionID = 0;
     this.shows();
   }
 
   showSummary(): void {
-    this.selectedType = 1;
+    this.selectedSectionID = 1;
     this.shows();
   }
 
   private shows(): void {
     this.sidenavComponent.expandReduceNav(false);
-    this.sidenavComponent.changeRecipeType(this.sections[this.selectedType]);
+    this.sidenavComponent.changeRecipeType(this.sections[this.selectedSectionID]);
   }
 }

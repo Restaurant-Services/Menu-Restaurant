@@ -36,7 +36,7 @@ export class MatrixComponent implements OnInit {
 
   private recipesPerSelectedType(): void {
     this.recipes.forEach((recipe: Recipe) => {
-      if (recipe.type.equals(this.selectedRecipeType)) {
+      if (this.selectedRecipeType.equals(recipe.type)) {
         this.recipesPerType++;
       }
     });

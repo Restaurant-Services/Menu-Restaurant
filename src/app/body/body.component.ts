@@ -11,30 +11,30 @@ import { Order } from '../shared/order';
 })
 export class BodyComponent {
   @Input()
-  recipeType: RecipeType;
+  type: RecipeType;
 
   recipes: Recipe[] = RECIPES;
-  orderArray: Order[] = [];
+  orders: Order[] = [];
 
   updateOrder(order: Order): void {
     let inserted = false;
-    this.orderArray.forEach((element: Order) => {
+    this.orders.forEach((element: Order) => {
       if (!inserted && element.updateQty(order, true)) {
         inserted = true;
       }
     });
     if (!inserted) {
-      this.orderArray.push(order);
+      this.orders.push(order);
     }
     this.sortOrderArray();
   }
 
   updateOrders(orders: Order[]): void {
-    this.orderArray = orders;
+    this.orders = orders;
     this.sortOrderArray();
   }
 
   private sortOrderArray(): void {
-    this.orderArray.sort(Order.sort);
+    this.orders.sort(Order.sort);
   }
 }

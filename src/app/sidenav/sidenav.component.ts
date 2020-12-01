@@ -1,9 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {MatIconRegistry} from '@angular/material/icon';
-import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
-import {RecipeType} from '../shared/recipe-type';
-import {RECIPE_TYPES} from '../shared/mock/mock-recipe-types';
-import {HeaderComponent} from '../header/header.component';
+import { Component, Input } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { HeaderComponent } from '../header/header.component';
+import { RecipeType } from '../shared/recipe-type';
+import { RECIPE_TYPES } from '../shared/mock/mock-recipe-types';
 
 @Component({
   selector: 'app-sidenav',
@@ -16,7 +16,7 @@ export class SidenavComponent {
   @Input()
   headerComponent: HeaderComponent;
 
-  body: RecipeType = null;
+  selectedType: RecipeType = null;
   isExpanded = false;
   isShowing = false;
 
@@ -38,7 +38,7 @@ export class SidenavComponent {
   }
 
   public changeRecipeType(type: RecipeType): void {
-    this.body = type;
+    this.selectedType = type;
     this.reduceSidenav();
   }
 

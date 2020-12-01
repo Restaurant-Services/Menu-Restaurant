@@ -4,6 +4,7 @@
       {{ menuItem.name }}
     </p>
     <img [src]="menuItem.png"
+         alt="{{ menuItem.name }} - {{ menuItem.description }}"
          width="200em"
          height="100em"
          class="space" (click)="openModalDialog()">
