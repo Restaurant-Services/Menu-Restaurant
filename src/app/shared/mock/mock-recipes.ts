@@ -121,7 +121,7 @@ export const RECIPES: Recipe[] = [
     3.5, null, [],
     [2, 6, 1]),
   new Recipe(index++,  '30', 'Ramen di manzo', RECIPE_TYPES[2],
-    'Spaghetti di frumento con brodo di manzo, verdure, alghe, mais e uovo',
+    'Spaghetti di frumento con brodo di manzo, verdure, alghe, mais e uova',
     7.5, null, [26, 10],
     [2, 6, 4, 3]),
   new Recipe(index++,  '31', 'Kaisen udon', RECIPE_TYPES[2],

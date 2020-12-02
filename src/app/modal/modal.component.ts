@@ -12,11 +12,18 @@ import { Recipe } from '../shared/recipe';
 })
 export class ModalComponent {
   order: Order;
+  isRecipe: boolean;
   allergens: Allergen[] = [];
 
   constructor(public dialogRef: MatDialogRef<ModalComponent>,
               @Inject(MAT_DIALOG_DATA) public data: Recipe | Order) {
-    this.order = data instanceof Recipe ? new Order(data) : data;
+    if (data instanceof Recipe) {
+      this.isRecipe = true;
+      this.order = new Order(data);
+    } else {
+      this.isRecipe = false;
+      this.order = data;
+    }
     this.updateAllergensList();
   }
 

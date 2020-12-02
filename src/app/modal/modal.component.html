@@ -34,7 +34,7 @@
             <input type="checkbox"
                    class="form-check-input scale space-r"
                    [checked]="optIngredient.checked"
-                   [disabled]="!optIngredient.optional"
+                   [disabled]="isRecipe || !optIngredient.optional"
                    (change)="updateAllergensList(optIngredient)">
           </label>
           <span class="text" [innerText]="optIngredient.ingredient.name"></span>

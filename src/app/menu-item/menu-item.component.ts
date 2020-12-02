@@ -19,7 +19,7 @@ export class MenuItemComponent implements OnInit {
 
   private modalDialogConfig: MatDialogConfig<Recipe> = {
     width: '30em',
-    height: '20em',
+    height: '35em',
     autoFocus: false
   };
 
