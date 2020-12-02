@@ -28,6 +28,10 @@ export class OptionalIngredient {
   }
 
   public equals(compare: OptionalIngredient, checkedSensitive): boolean {
-    return checkedSensitive ? this.equalsPartial(compare) : this.equalsComplete(compare);
+    return !checkedSensitive ? this.equalsPartial(compare) : this.equalsComplete(compare);
+  }
+
+  public clone(): OptionalIngredient {
+    return new OptionalIngredient(this.ingredient, this.optional, this.checked);
   }
 }

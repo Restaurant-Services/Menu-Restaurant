@@ -24,8 +24,8 @@ export class Recipe {
               description: string,
               price: number,
               pieces: number,
-              optIngredients: number[],
-              allergens: number[],
+              optIngredients: number[] = [],
+              allergens: number[] = [],
               alternativeCode: string = null,
               mustIngredients: number[] = []) {
     this.id = id;

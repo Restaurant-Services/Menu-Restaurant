@@ -64,4 +64,12 @@ export class Order {
     });
     return true;
   }
+
+  public clone(): Order {
+    const order: Order = new Order(this.recipe, this.quantity, this.description, []);
+    this.ingredients.forEach((optIngredient: OptionalIngredient) => {
+      order.ingredients.push(optIngredient.clone());
+    });
+    return order;
+  }
 }
