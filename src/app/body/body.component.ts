@@ -19,7 +19,7 @@ export class BodyComponent {
   updateOrder(order: Order): void {
     let inserted = false;
     this.orders.forEach((element: Order) => {
-      if (!inserted && element.updateQty(order, true)) {
+      if (!inserted && element.updateQty(order)) {
         inserted = true;
       }
     });
