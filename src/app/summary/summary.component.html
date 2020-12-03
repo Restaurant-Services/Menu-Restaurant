@@ -8,7 +8,7 @@
             <th scope="col" class="center-text margin-vertical-auto">Codice</th>
             <th scope="col" class="center-text margin-vertical-auto">Piatto</th>
             <th scope="col" class="center-text margin-vertical-auto">Quantità</th>
-            <th scope="col" class="center-text margin-vertical-auto">Descrizione</th>
+            <th scope="col" class="center-text margin-vertical-auto">Note</th>
           </tr>
         </thead>
         <tbody>
@@ -63,18 +63,12 @@
             <td>
               <div class="container-fluid">
                 <div class="row">
-                  <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 reset-padding">
-                    <textarea #desc class="form-control"
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 reset-padding">
+                    <textarea class="form-control"
                               id="exampleFormControlTextarea{{ i }}"
                               (click)="openModalDialog(order)"
                               rows="1" [innerText]="order.description"></textarea>
                   </div>
-                  <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 reset-padding">
-                    <button type="button" class="btn btn-primary" (click)="note(desc.value, i)">
-                      NOTA
-                    </button>
-                  </div>
-                  <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
                 </div>
               </div>
             </td>

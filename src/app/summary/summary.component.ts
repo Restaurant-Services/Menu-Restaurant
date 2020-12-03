@@ -23,15 +23,7 @@ export class SummaryComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    for (let j = 0; j < this.orderArray.length; j++) {
-      for (let k = j + 1; k < this.orderArray.length; k++) {
-        if (this.orderArray[j].equals(this.orderArray[k], true)) {
-          this.orderArray[j].quantity += this.orderArray[k].quantity;
-          this.orderArray.splice(k, 1);
-          k--;
-        }
-      }
-    }
+    this.cleanOrdersAfterSort();
     this.emit();
   }
 
@@ -56,24 +48,26 @@ export class SummaryComponent implements OnInit {
       if (result) {
         order.ingredients = result.ingredients;
         order.updateDescription();
+        this.emit();
+        if (order.description.length > 0) {
+          this.orderArray.push(new Order(order.recipe));
+          this.cleanOrdersAfterSort();
+          this.emit();
+        }
       }
     });
   }
 
-  note(note: string, index: number): void {
-    this.orderArray[index].description = note;
-    const order: Order = new Order(this.orderArray[index].recipe);
-    let nopush = false;
-    this.orderArray.forEach((element: Order) => {
-      if (element.equals(order, true)) {
-        nopush = true;
-        return;
+  private cleanOrdersAfterSort(): void {
+    for (let j = 0; j < this.orderArray.length; j++) {
+      for (let k = j + 1; k < this.orderArray.length; k++) {
+        if (this.orderArray[j].equals(this.orderArray[k], true)) {
+          this.orderArray[j].quantity += this.orderArray[k].quantity;
+          this.orderArray.splice(k, 1);
+          k--;
+        }
       }
-    });
-    if (!nopush) {
-      this.orderArray.push(order);
     }
-    this.emit();
   }
 
   private emit(): void {
