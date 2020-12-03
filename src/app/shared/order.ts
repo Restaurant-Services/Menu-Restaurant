@@ -40,12 +40,25 @@ export class Order {
     return sort;
   }
 
-  public updateQty(order: Order, descrSensitive: boolean): boolean {
-    if (this.equals(order, descrSensitive)) {
+  public updateDescription(): void {
+    this.description = '';
+    this.ingredients.forEach((optIngr: OptionalIngredient, index: number) => {
+      if (!optIngr.equals(this.recipe.optionalIngredients[index], true)) {
+        this.description += ', ';
+        this.description += optIngr.checked ? 'CON ' : 'NO ';
+        this.description += optIngr.ingredient.noteName;
+      }
+    });
+    this.description = this.description.substr(2);
+  }
+
+  public updateQty(order: Order): boolean {
+    if (this.equals(order, true)) {
+      this.quantity += order.quantity;
       if (this.quantity > 0) {
-        this.quantity += order.quantity;
         return true;
       }
+      this.quantity -= order.quantity;
     }
     return false;
   }
