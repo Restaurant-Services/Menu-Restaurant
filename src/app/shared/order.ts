@@ -20,7 +20,10 @@ export class Order {
   public static sort(a: Order, b: Order): number {
     let sort: number = Recipe.sort(a.recipe, b.recipe);
     if (sort === 0) {
-      sort = b.description.localeCompare(a.description);
+      sort = b.description.length - a.description.length;
+      if (sort === 0) {
+        sort = b.description.localeCompare(a.description);
+      }
     }
     return sort;
   }
@@ -51,9 +54,6 @@ export class Order {
   public equals(order: Order, checkedSensitive: boolean): boolean {
     let equal = true;
     if (!this.recipe.equals(order.recipe)) {
-      return false;
-    }
-    if (this.ingredients.length !== order.ingredients.length) {
       return false;
     }
     this.ingredients.forEach((ingredient: OptionalIngredient, index: number) => {
