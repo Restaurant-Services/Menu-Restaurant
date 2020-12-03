@@ -67,7 +67,9 @@
                     <textarea class="form-control"
                               id="exampleFormControlTextarea{{ i }}"
                               (click)="openModalDialog(order)"
-                              rows="1" [innerText]="order.description"></textarea>
+                              rows="1"
+                              [innerText]="order.description"
+                              readonly></textarea>
                   </div>
                 </div>
               </div>
