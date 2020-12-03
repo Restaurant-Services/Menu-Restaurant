@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
+import { OptionalIngredient } from '../shared/optional-ingredient';
 import { Order } from '../shared/order';
 
 @Component({
@@ -16,7 +17,7 @@ export class SummaryComponent implements OnInit {
 
   private modalDialogConfig: MatDialogConfig<Order> = {
     width: '30em',
-    height: '50em',
+    height: '35em',
     autoFocus: false
   };
 
@@ -50,12 +51,20 @@ export class SummaryComponent implements OnInit {
   }
 
   openModalDialog(order: Order): void {
-    // console.log('Here should be the code to open the modal and change Ingredients, here the order: ' + JSON.stringify(order));
     this.modalDialogConfig.data = order;
     const modalDialogRef = this.dialog.open(ModalComponent, this.modalDialogConfig);
     modalDialogRef.afterClosed().subscribe((result: Order) => {
       if (result) {
-        console.log(JSON.stringify(result));
+        order.ingredients = result.ingredients;
+        order.description = '';
+        order.ingredients.forEach((optIngr: OptionalIngredient, index: number) => {
+          if (!optIngr.equals(order.recipe.optionalIngredients[index], true)) {
+            order.description += ', ';
+            order.description += optIngr.checked ? 'CON ' : 'NO ';
+            order.description += optIngr.ingredient.noteName;
+          }
+        });
+        order.description = order.description.substr(2);
       }
     });
   }

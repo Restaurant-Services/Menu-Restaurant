@@ -67,7 +67,7 @@
                     <textarea #desc class="form-control"
                               id="exampleFormControlTextarea{{ i }}"
                               (click)="openModalDialog(order)"
-                              rows="1">{{ order.description }}</textarea>
+                              rows="1" [innerText]="order.description"></textarea>
                   </div>
                   <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 reset-padding">
                     <button type="button" class="btn btn-primary" (click)="note(desc.value, i)">
