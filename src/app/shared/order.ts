@@ -20,22 +20,7 @@ export class Order {
   public static sort(a: Order, b: Order): number {
     let sort: number = Recipe.sort(a.recipe, b.recipe);
     if (sort === 0) {
-      sort = a.ingredients.length - b.ingredients.length;
-      if (sort === 0) {
-        for (let i = 0; i < a.ingredients.length; i++) {
-          sort = OptionalIngredient.sort(a.ingredients[i], b.ingredients[i]);
-          if (sort !== 0) {
-            break;
-          }
-        }
-        if (sort === 0) {
-          sort = a.description.length === 0 ? 1 : 0;
-          sort -= b.description.length === 0 ? 0 : 1;
-          if (sort === 0) {
-            sort = a.description.localeCompare(b.description);
-          }
-        }
-      }
+      sort = b.description.localeCompare(a.description);
     }
     return sort;
   }
@@ -64,6 +49,7 @@ export class Order {
   }
 
   public equals(order: Order, checkedSensitive: boolean): boolean {
+    let equal = true;
     if (!this.recipe.equals(order.recipe)) {
       return false;
     }
@@ -71,11 +57,11 @@ export class Order {
       return false;
     }
     this.ingredients.forEach((ingredient: OptionalIngredient, index: number) => {
-      if (!ingredient.equals(order.ingredients[index], checkedSensitive)) {
-        return false;
+      if (equal && !ingredient.equals(order.ingredients[index], checkedSensitive)) {
+        equal = false;
       }
     });
-    return true;
+    return equal;
   }
 
   public clone(): Order {
