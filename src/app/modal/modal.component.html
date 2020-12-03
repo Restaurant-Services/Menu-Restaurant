@@ -22,13 +22,13 @@
         </div>
       </div>
     </ng-container>
-    <ng-container *ngIf="order.recipe.optionalIngredients.length > 0">
+    <ng-container *ngIf="order.ingredients.length > 0">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <h2 class="center-text">Ingredienti opzionali</h2>
         </div>
       </div>
-      <div *ngFor="let optIngredient of order.recipe.optionalIngredients" class="row">
+      <div *ngFor="let optIngredient of order.ingredients" class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <label>
             <input type="checkbox"
@@ -46,7 +46,7 @@
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="f-r">
-          <button *ngIf="false"
+          <button *ngIf="!isRecipe"
                   type="button"
                   class="btn btn-primary mat-button space-r"
                   (click)="save()">

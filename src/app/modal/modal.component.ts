@@ -22,7 +22,7 @@ export class ModalComponent {
       this.order = new Order(data);
     } else {
       this.isRecipe = false;
-      this.order = data;
+      this.order = data.clone();
     }
     this.updateAllergensList();
   }
