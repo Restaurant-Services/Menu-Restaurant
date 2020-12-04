@@ -24,7 +24,7 @@ export class RecipeType {
   }
 
   getSVGPathFromComponent(): string {
-    return `../../${this.getSVGPathFromRoot()}`;
+    return `../${this.getSVGPathFromRoot()}`;
   }
 
   getSVGPathFromRoot(): string {
