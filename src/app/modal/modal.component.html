@@ -7,6 +7,28 @@
   <div mat-dialog-content>
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <img [src]="order.recipe.png"
+                         alt="{{ order.recipe.name }} - {{ order.recipe.description }}"
+                         width="100%"
+                         height="56%"
+                         style="margin-left: auto; margin-right: auto;"
+                         class="space">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <p class="text" [innerText]="order.recipe.description"></p>
       </div>
     </div>
