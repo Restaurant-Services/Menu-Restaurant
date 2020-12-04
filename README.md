@@ -11,14 +11,9 @@ the first lockdown.
 She wasn't ready at all, she had to remove menus from the restaurant and the only
 way she had to give menus to her guests was to share it on Facebook and Instagram.
 
-Fun fact about me: I don't like Instagram! I tried it once and i see so many naked
-girls.
+Fun fact about me: I don't like Instagram!
 
-I appreciate that pictures but I still remember Oak's words: "There's a time and
-place for everything", and I guess that pictures and position should be on Porn sites.
-
-After this little joke that I use to tell when someone asks my Instagram account,
-now I want to talk about my choices!
+Let's talk about my choices!
 
 ##Why Angular
 
@@ -75,3 +70,14 @@ Here comes the "business" for my colleagues (and, if I'm lucky, for me too):
 I don't want to ruin the main business of many other colleagues, but
 in this situation it's really hard to find new guests, here is a way to earn
 a little bit less but without working soo hard.
+
+##Donations
+
+Italians don't use to donate soo much for Open Source projects!
+
+But I'm really kind and I want to give you the possibility to offer me a coffe,
+a beer, a pizza (Italian Pizza, not that strange thing with Pineapple that you
+use to call pizza), a lovely kiss or a new house.
+
+I use to joke too much maybe, but it's an hard period for everyone, if I help
+you then I suggest to consider to help me back too :-)
