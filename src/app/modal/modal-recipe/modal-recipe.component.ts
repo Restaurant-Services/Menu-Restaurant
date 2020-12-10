@@ -8,7 +8,7 @@ import { Recipe } from '../../shared/recipe';
 @Component({
   selector: 'app-modal',
   templateUrl: './modal-recipe.component.html',
-  styleUrls: ['./modal-recipe.component.css']
+  styleUrls: ['../styles.css', './modal-recipe.component.css']
 })
 export class ModalRecipeComponent {
   order: Order;
