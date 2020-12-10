@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ModalRecipeComponent } from '../modal/modal-recipe/modal-recipe.component';
 import { Order } from '../shared/order';
+import {ModalOrderComponent} from '../modal-order/modal-order.component';
 
 @Component({
   selector: 'app-summary',
@@ -15,6 +16,12 @@ export class SummaryComponent implements OnInit {
   orderEmit: EventEmitter<Order[]> = new EventEmitter();
 
   private modalRecipeDialogConfig: MatDialogConfig<Order> = {
+    width: '30em',
+    height: '35em',
+    autoFocus: false
+  };
+
+  private modalOrdersDialogConfig: MatDialogConfig<Order[]> = {
     width: '30em',
     height: '35em',
     autoFocus: false
@@ -56,6 +63,11 @@ export class SummaryComponent implements OnInit {
         }
       }
     });
+  }
+
+  openModalOrdersDialog(): void {
+    this.modalOrdersDialogConfig.data = this.orderArray;
+    this.dialog.open(ModalOrderComponent, this.modalOrdersDialogConfig);
   }
 
   private cleanOrdersAfterSort(): void {
