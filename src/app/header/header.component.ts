@@ -37,6 +37,7 @@ export class HeaderComponent {
 
   showSummary(): void {
     this.selectedSectionID = 2;
+    this.setTopRight();
     this.shows();
   }
 
