@@ -43,7 +43,6 @@ export class HeaderComponent {
 
   public setTopRight(cookie: boolean = false): void {
     this.topRightHeader = cookie ? 'COOKIES' : 'CREDITS';
-    console.log(this.selectedSectionID);
   }
 
   private shows(): void {

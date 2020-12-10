@@ -42,7 +42,6 @@ export class SidenavComponent {
     if (type.id > -1) {
       this.headerComponent.setTopRight();
     }
-    console.log(this.selectedType.name);
     this.reduceSidenav();
   }
 
