@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +7,4 @@ import { Component, HostListener } from '@angular/core';
 })
 export class AppComponent {
   title = 'zumi-sushi';
-
-  @HostListener('window:beforeunload', ['$event'])
-  unloadHandler($event: Event): any {
-    const message = `Attenzione, aggiornando o chiudendo la pagina perderai l'ordine`;
-    $event.preventDefault();
-    $event.returnValue = false;
-    return message;
-  }
 }

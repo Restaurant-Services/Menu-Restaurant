@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Order } from '../shared/order';
 import { Recipe } from '../shared/recipe';
@@ -19,6 +19,14 @@ export class BodyComponent {
   orders: Order[] = [];
 
   constructor(private cookieService: CookieService) { }
+
+  @HostListener('window:beforeunload', ['$event'])
+  unloadHandler($event: Event): any {
+    const message = `Attenzione, aggiornando o chiudendo la pagina perderai l'ordine`;
+    $event.preventDefault();
+    $event.returnValue = false;
+    return message;
+  }
 
   updateOrder(order: Order): void {
     let inserted = false;
