@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ModalRecipeComponent } from '../modal/modal-recipe/modal-recipe.component';
 import { Order } from '../shared/order';
-import {ModalOrderComponent} from '../modal-order/modal-order.component';
+import {ModalOrderComponent} from '../modal/modal-order/modal-order.component';
 
 @Component({
   selector: 'app-summary',
