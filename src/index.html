@@ -8,6 +8,38 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.css"/>
+  <script src="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    window.addEventListener("load", function() {
+      window.wpcc.init({
+        "colors": {
+          "popup": {
+            "background": "#222222",
+            "text": "#ffffff",
+            "border": "#ff0000"
+          },
+          "button": {
+            "background": "#ffcb00",
+            "text": "#000000"
+          }
+        },
+        "position": "bottom",
+        "border": "thick",
+        "corners": "large",
+        "padding": "none",
+        "margin": "large",
+        "transparency": "15",
+        "content": {
+          "href": "",
+          "button": "OK",
+          "message": "Questo sito utilizza i cookie ma nessuno avrà i vostri dati. Per info doppio tocco in alto a destra.",
+          "link": ""
+        }
+      })
+    });
+  </script>
 </head>
 <body class="mat-typography">
   <app-root></app-root>

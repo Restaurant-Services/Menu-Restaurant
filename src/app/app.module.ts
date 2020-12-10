@@ -19,6 +19,7 @@ import { MenuItemComponent } from './menu-item/menu-item.component';
 import { MatCardModule } from '@angular/material/card';
 import { SummaryComponent } from './summary/summary.component';
 import { ModalModule } from './modal/modal.module';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { ModalModule } from './modal/modal.module';
     MatListModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
