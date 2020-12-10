@@ -1,35 +1,38 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 record">
-      <h1>ISTRUZIONI</h1>
-      <h2>Non aggiornare questo sito!</h2>
-      <p>
-        Per non perdere l'ordine, <u>non</u> si deve né aggiornare questa pagina (swipe verso il basso o F5)
-        né tornare indietro nella cronologia (freccia verso sinistra).
-      </p>
-      <p>
-        Questo sito è sprovvisto di qualsiasi sistema di salvataggio dati, non possiamo sapere nulla su di voi,
-        <u>neanche il vostro ordine</u>.
-      </p>
-      <h2>Le note sono importanti!</h2>
-      <p>
-        Non tutti vogliono il Philadelphia sul proprio Nigiri Sake Flower, magari 2 o più congiunti allo stesso
-        tavolo la pensano diversamente.
-        <br>
-        Toccando il campo note sarà possibile rimuove o aggiungere Ingredienti per personalizzare la pietanza.
-      </p>
-      <h2 *ngIf="!showCredits">
-        Cliccare su CREDITS per avere maggiori dettagli sui contributi al progetto e sulle istruzioni
-      </h2>
+      <ng-container *ngIf="!showCredits">
+        <h1>ISTRUZIONI</h1>
+        <h2>Non aggiornare questo sito!</h2>
+        <p>
+          Per non perdere l'ordine, <u>non</u> si deve né aggiornare questa pagina (swipe verso il basso o F5)
+          né tornare indietro nella cronologia (freccia verso sinistra).
+        </p>
+        <p>
+          Questo sito è sprovvisto di qualsiasi sistema di salvataggio dati, non possiamo sapere nulla su di voi,
+          <u>neanche il vostro ordine</u>.
+        </p>
+        <h2>Le note sono importanti!</h2>
+        <p>
+          Non tutti vogliono il Philadelphia sul proprio Nigiri Sake Flower, magari 2 o più congiunti allo stesso
+          tavolo la pensano diversamente.
+          <br>
+          Toccando il campo note sarà possibile rimuove o aggiungere Ingredienti per personalizzare la pietanza.
+        </p>
+        <h2 *ngIf="!showCredits">
+          Cliccare su CREDITS per avere maggiori dettagli sui contributi al progetto e sulle istruzioni
+        </h2>
+      </ng-container>
       <ng-container *ngIf="showCredits">
         <h1>MENÙ DIGITALE REALIZZATO DA:</h1>
-        <h2><a href="https://github.com/Restaurant-Services">Restaurant Services</a></h2>
-        <p>Questo sito è open-source, il codice per costruirlo è consultabile online gratuitamente.</p>
+        <h2 class="center-text">
+          <a href="https://github.com/Restaurant-Services">Restaurant Services</a>
+        </h2>
         <p>
-          La stessa Restaurant Services è un'organizzazione ufficiosa, per supportare con una donazione il team:
-          <a href="https://liberapay.com/SushiRestaurant/donate">Liberapay</a>
+          Questo sito è
+          <a href="https://github.com/Restaurant-Services/Menu-Restaurant">open-source</a>,
+          il codice per costruirlo è consultabile gratuitamente.
         </p>
-        <p>Se siete interessati ad avere il Vostro menù personalizzato o per qualsiasi richiesta, contattare il team di Restaurant Services.</p>
         <h1>ICONE REALIZZATE DA:</h1>
         <div *ngFor="let type of recipeTypes" class="record">
           <p class="center-text">
