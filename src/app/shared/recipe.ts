@@ -1,5 +1,4 @@
 import { Allergen } from './allergen';
-import { Ingredient } from './ingredient';
 import { OptionalIngredient } from './optional-ingredient';
 import { RecipeType } from './recipe-type';
 import { ALLERGENS } from './mock/mock-allergens';
@@ -24,9 +23,10 @@ export class Recipe {
               description: string,
               price: number,
               pieces: number,
-              optIngredients: number[] = [],
+              includedIngredients: number[] = [],
               allergens: number[] = [],
               alternativeCode: string = null,
+              notFreeIngredients: number[] = [],
               mustIngredients: number[] = []) {
     this.id = id;
     this.code = code;
@@ -35,11 +35,14 @@ export class Recipe {
     this.description = description;
     this.price = price;
     this.pieces = pieces;
-    optIngredients.forEach((ingredientId: number) => {
+    includedIngredients.forEach((ingredientId: number) => {
       this.optionalIngredients.push(new OptionalIngredient(INGREDIENTS[ingredientId], true));
     });
+    notFreeIngredients.forEach((ingredientId: number) => {
+      this.optionalIngredients.push(new OptionalIngredient(INGREDIENTS[ingredientId], true, false));
+    });
     mustIngredients.forEach((ingredientId: number) => {
-      this.optionalIngredients.push(new OptionalIngredient(INGREDIENTS[ingredientId], false));
+      this.optionalIngredients.push(new OptionalIngredient(INGREDIENTS[ingredientId]));
     });
     allergens.forEach((allergen: number) => {
       this.allergens.push(ALLERGENS[allergen]);
@@ -47,7 +50,7 @@ export class Recipe {
     this.png = (alternativeCode === null ? code.replace('VEG', '') : alternativeCode);
     this.png = 'assets/img/' + this.png;
     this.png += '.PNG';
-    this.sortArrays();
+    this.sortAndCleanArrays();
   }
 
   public static sort(a: Recipe, b: Recipe): number {
@@ -58,38 +61,29 @@ export class Recipe {
     return sort;
   }
 
-  getIngredients(optional?: boolean): Ingredient[] {
-    const ingredients: Ingredient[] = [];
-    this.optionalIngredients.forEach((a: OptionalIngredient) => {
-      if (optional === undefined || a.optional === optional) {
-        ingredients.push(a.ingredient);
+  private sortAndCleanArrays(): void {
+    this.optionalIngredients.sort(OptionalIngredient.sort);
+    for (let i = 1; i < this.optionalIngredients.length; i++) {
+      if (this.optionalIngredients[i].equals(this.optionalIngredients[i - 1])) {
+        i--;
+        this.optionalIngredients.splice(i, 1);
       }
+    }
+    this.optionalIngredients.forEach((optionalIngredient: OptionalIngredient) => {
+      optionalIngredient.ingredient.allergens.forEach((allergen: Allergen) => {
+        this.allergens.push(allergen);
+      });
     });
-    ingredients.sort(Ingredient.sort);
-    return ingredients;
+    this.allergens.sort(Allergen.sort);
+    for (let i = 1; i < this.allergens.length; i++) {
+      if (this.allergens[i].equals(this.allergens[i - 1])) {
+        i--;
+        this.allergens.splice(i, 1);
+      }
+    }
   }
 
   public equals(compare: Recipe): boolean {
     return this.id === compare.id && this.code === compare.code;
   }
-
-  private sortArrays(): void {
-    this.optionalIngredients.sort(OptionalIngredient.sort);
-    this.allergens.sort(Allergen.sort);
-  }
-
-  /*private noClones(): void {
-    for (let i = 1; i < this.optionalIngredients.length; i++) {
-      if (this.optionalIngredients[i - 1].equals(this.optionalIngredients[i])) {
-        this.optionalIngredients.splice(i, 1);
-        i--;
-      }
-    }
-    for (let i = 1; i < this.allergens.length; i++) {
-      if (this.allergens[i - 1].equals(this.allergens[i])) {
-        this.allergens.splice(i, 1);
-        i--;
-      }
-    }
-  }*/
 }
