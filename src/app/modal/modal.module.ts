@@ -7,10 +7,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ModalRecipeComponent } from './modal-recipe/modal-recipe.component';
+import { ModalOrderComponent } from '../modal-order/modal-order.component';
 
 @NgModule({
   declarations: [
-    ModalRecipeComponent
+    ModalRecipeComponent,
+    ModalOrderComponent
   ],
   imports: [
     CommonModule
