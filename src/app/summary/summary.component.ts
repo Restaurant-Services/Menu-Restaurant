@@ -41,7 +41,7 @@ export class SummaryComponent implements OnInit {
     this.emit();
   }
 
-  openModalDialog(order: Order): void {
+  openModalRecipeDialog(order: Order): void {
     this.modalDialogConfig.data = order;
     const modalDialogRef = this.dialog.open(ModalRecipeComponent, this.modalDialogConfig);
     modalDialogRef.afterClosed().subscribe((result: Order) => {
