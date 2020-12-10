@@ -1,8 +1,8 @@
-# Sushi-Restaurant
+# Menu Restaurant
 
 Working backend-less Menu application.
 
-##Where does the idea come from?
+## Where does the idea come from?
 
 Corona virus is the main reason, a friend of mine was scared about closing her
 restaurant in this period, she is also pregnant than her concerns are twice than
@@ -15,7 +15,7 @@ Fun fact about me: I don't like Instagram!
 
 Let's talk about my choices!
 
-##Why Angular
+## Why Angular
 
 I'm a programmer, I like back-end and I used to work on back-end since my first job.
 
@@ -25,7 +25,7 @@ allows to create a Backend less application, then I chose to start this new adve
 For the Italian lockdown I couldn't celebrate my birthday, then I wrote this
 application exactly on that week, during my free time and breaks.
 
-##Why backend-less?
+## Why backend-less?
 
 Backend-less means that there is no application behind the scene,
 data is simply parsed on the website and sent to a Database without
@@ -38,20 +38,20 @@ In this case, a menu is an easy application that doesn't require any kind
 of calculations or conversions, it's really easy that a backend may be
 not used at all.
 
-##Is there a DB?
+## Is there a DB?
 
 Not yet, at the moment there are many mock files.
 
 I'm still looking for a MongoDB free host.
 
-##Why these options?
+## Why these options?
 
 The main reason is the Pandemic situation, in Italy we have many strict laws to
 respect, many restaurants are not ready yet to face this situation.
 
 And with this open source projects I want to create a free platform ready to use.
 
-##Open Source means that no one gets paid?
+## Open Source means that no one gets paid?
 
 Not at all, I didn't get money, for the economical crysis it's hard to get paid
 from anyone for any kind of service, but this service is essential.
@@ -71,7 +71,7 @@ I don't want to ruin the main business of many other colleagues, but
 in this situation it's really hard to find new guests, here is a way to earn
 a little bit less but without working soo hard.
 
-##Donations
+## Donations
 
 Italians don't use to donate soo much for Open Source projects!
 
