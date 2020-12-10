@@ -7,7 +7,11 @@ export class RecipeType {
   svgAuthor: Author;
   displayName: string;
 
-  constructor(id: number, name: string, svg: string, svgAuthor: Author, displayName: string = name) {
+  constructor(id: number,
+              name: string,
+              svg: string = null,
+              svgAuthor: Author = null,
+              displayName: string = name) {
     this.id = id;
     this.name = name;
     this.svg = svg;
