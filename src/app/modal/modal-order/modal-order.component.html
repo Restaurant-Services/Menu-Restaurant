@@ -1,1 +1,33 @@
-<p>modal-order works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <h1 mat-dialog-title>ORDINE:</h1>
+    </div>
+  </div>
+  <div mat-dialog-content>
+    <ng-container *ngFor="let order of orders, let i = index">
+      <div *ngIf="order.quantity > 0"
+           class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <p class="text">
+            <b style="color: darkorange">{{ order.recipe.code !== null ? order.recipe.code : order.recipe.name }}</b>
+            {{ 'X ' + order.quantity + (order.description ? ' ' + order.description : '') + (i + 1 < orders.length ? ',' : '') }}
+          </p>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div mat-dialog-close>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="f-r">
+          <button type="button"
+                  class="btn btn-danger mat-button"
+                  (click)="close()">
+            CHIUDI
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
