@@ -4,17 +4,17 @@ import { Recipe } from './recipe';
 export class Order {
   recipe: Recipe;
   quantity: number;
-  description: string;
   ingredients: OptionalIngredient[];
+  description: string;
+  price: number;
 
   constructor(recipe: Recipe,
               quantity: number = 0,
-              description: string = '',
               optionalIngredients: OptionalIngredient[] = recipe.optionalIngredients) {
     this.recipe = recipe;
     this.quantity = quantity;
-    this.description = description;
     this.ingredients = optionalIngredients.sort(OptionalIngredient.sort);
+    this.updateDescription();
   }
 
   public static sort(a: Order, b: Order): number {
@@ -30,11 +30,16 @@ export class Order {
 
   public updateDescription(): void {
     this.description = '';
+    this.resetPrice();
     this.ingredients.forEach((optIngr: OptionalIngredient, index: number) => {
       if (!optIngr.equals(this.recipe.optionalIngredients[index], true)) {
         this.description += ', ';
         this.description += optIngr.checked ? 'CON ' : 'NO ';
         this.description += optIngr.ingredient.noteName;
+        // EXTRA INGREDIENTS are expensive, remove ingredients doesn't make the recipe cheaper
+        if (optIngr.checked) {
+          this.price += optIngr.ingredient.price;
+        }
       }
     });
     this.description = this.description.substr(2);
@@ -51,6 +56,10 @@ export class Order {
     return false;
   }
 
+  private resetPrice(): void {
+    this.price = this.recipe.price;
+  }
+
   public equals(order: Order, checkedSensitive: boolean): boolean {
     let equal = true;
     if (!this.recipe.equals(order.recipe)) {
@@ -65,10 +74,11 @@ export class Order {
   }
 
   public clone(): Order {
-    const order: Order = new Order(this.recipe, this.quantity, this.description, []);
+    const order: Order = new Order(this.recipe, this.quantity, []);
     this.ingredients.forEach((optIngredient: OptionalIngredient) => {
       order.ingredients.push(optIngredient.clone());
     });
+    order.updateDescription();
     return order;
   }
 }
