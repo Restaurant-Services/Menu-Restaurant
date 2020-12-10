@@ -27,7 +27,8 @@ export class OptionalIngredient {
     return this.equalsPartial(compare) && this.checked === compare.checked;
   }
 
-  public equals(compare: OptionalIngredient, checkedSensitive): boolean {
+  public equals(compare: OptionalIngredient,
+                checkedSensitive: boolean = false): boolean {
     if (checkedSensitive) {
       return this.equalsComplete(compare);
     } else {
