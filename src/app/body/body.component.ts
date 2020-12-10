@@ -20,12 +20,9 @@ export class BodyComponent {
 
   constructor(private cookieService: CookieService) { }
 
-  @HostListener('window:beforeunload', ['$event'])
-  unloadHandler($event: Event): any {
-    const message = `Attenzione, aggiornando o chiudendo la pagina perderai l'ordine`;
-    $event.preventDefault();
-    $event.returnValue = false;
-    return message;
+  @HostListener('window:beforeunload')
+  unloadHandler(): boolean {
+    return this.orders.length === 0;
   }
 
   updateOrder(order: Order): void {
