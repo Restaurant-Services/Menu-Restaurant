@@ -14,7 +14,7 @@ export class SummaryComponent implements OnInit {
   @Output()
   orderEmit: EventEmitter<Order[]> = new EventEmitter();
 
-  private modalDialogConfig: MatDialogConfig<Order> = {
+  private modalRecipeDialogConfig: MatDialogConfig<Order> = {
     width: '30em',
     height: '35em',
     autoFocus: false
@@ -42,8 +42,8 @@ export class SummaryComponent implements OnInit {
   }
 
   openModalRecipeDialog(order: Order): void {
-    this.modalDialogConfig.data = order;
-    const modalDialogRef = this.dialog.open(ModalRecipeComponent, this.modalDialogConfig);
+    this.modalRecipeDialogConfig.data = order;
+    const modalDialogRef = this.dialog.open(ModalRecipeComponent, this.modalRecipeDialogConfig);
     modalDialogRef.afterClosed().subscribe((result: Order) => {
       if (result) {
         order.ingredients = result.ingredients;
