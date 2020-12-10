@@ -8,7 +8,7 @@ export class OptionalIngredient {
   constructor(ingredient: Ingredient, optional: boolean = false, checked: boolean = true) {
     this.ingredient = ingredient;
     this.optional = optional;
-    this.checked = checked;
+    this.checked = !this.optional ? true : checked;
   }
 
   public static sort(a: OptionalIngredient, b: OptionalIngredient): number {
