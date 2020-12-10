@@ -20,6 +20,7 @@ import { MatCardModule } from '@angular/material/card';
 import { SummaryComponent } from './summary/summary.component';
 import { ModalModule } from './modal/modal.module';
 import { CookieService } from 'ngx-cookie-service';
+import { CookiesComponent } from './cookies/cookies.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CookieService } from 'ngx-cookie-service';
     CreditsComponent,
     MatrixComponent,
     MenuItemComponent,
-    SummaryComponent
+    SummaryComponent,
+    CookiesComponent
   ],
   imports: [
     ModalModule,

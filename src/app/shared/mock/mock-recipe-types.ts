@@ -33,6 +33,7 @@ export const RECIPE_TYPES: RecipeType[] = [
 ].sort(RecipeType.sort);
 
 export const EXTRA_SECTIONS: RecipeType[] = [
-  new RecipeType(-2, 'Credits', null, null),
-  new RecipeType(-1, 'Summary', null, null)
+  new RecipeType(-3, 'Credits'),
+  new RecipeType(-2, 'CookiePolicy'),
+  new RecipeType(-1, 'Summary')
 ].sort(RecipeType.sort);

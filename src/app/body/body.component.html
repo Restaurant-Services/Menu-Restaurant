@@ -1,5 +1,6 @@
-<app-credits *ngIf="type === null || type.id === -2"
+<app-credits *ngIf="type === null || type.id === -3"
              [showCredits]="type !== null"></app-credits>
+<app-cookies *ngIf="type && type.id === -2"></app-cookies>
 <app-summary *ngIf="type && type.id === -1"
              [orderArray]="orders"
              (orderEmit)="updateOrders($event)"></app-summary>
