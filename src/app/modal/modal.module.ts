@@ -6,11 +6,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ModalComponent } from './modal.component';
+import { ModalRecipeComponent } from './modal-recipe/modal-recipe.component';
 
 @NgModule({
   declarations: [
-    ModalComponent
+    ModalRecipeComponent
   ],
   imports: [
     CommonModule

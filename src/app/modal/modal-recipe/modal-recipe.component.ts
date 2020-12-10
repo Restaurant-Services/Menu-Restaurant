@@ -1,21 +1,21 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Allergen } from '../shared/allergen';
-import { OptionalIngredient } from '../shared/optional-ingredient';
-import { Order } from '../shared/order';
-import { Recipe } from '../shared/recipe';
+import { Allergen } from '../../shared/allergen';
+import { OptionalIngredient } from '../../shared/optional-ingredient';
+import { Order } from '../../shared/order';
+import { Recipe } from '../../shared/recipe';
 
 @Component({
   selector: 'app-modal',
-  templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css']
+  templateUrl: './modal-recipe.component.html',
+  styleUrls: ['./modal-recipe.component.css']
 })
-export class ModalComponent {
+export class ModalRecipeComponent {
   order: Order;
   isRecipe: boolean;
   allergens: Allergen[] = [];
 
-  constructor(public dialogRef: MatDialogRef<ModalComponent>,
+  constructor(public dialogRef: MatDialogRef<ModalRecipeComponent>,
               @Inject(MAT_DIALOG_DATA) public data: Recipe | Order) {
     if (data instanceof Recipe) {
       this.isRecipe = true;

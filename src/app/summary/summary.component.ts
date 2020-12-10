@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { ModalComponent } from '../modal/modal.component';
+import { ModalRecipeComponent } from '../modal/modal-recipe/modal-recipe.component';
 import { Order } from '../shared/order';
 
 @Component({
@@ -43,7 +43,7 @@ export class SummaryComponent implements OnInit {
 
   openModalDialog(order: Order): void {
     this.modalDialogConfig.data = order;
-    const modalDialogRef = this.dialog.open(ModalComponent, this.modalDialogConfig);
+    const modalDialogRef = this.dialog.open(ModalRecipeComponent, this.modalDialogConfig);
     modalDialogRef.afterClosed().subscribe((result: Order) => {
       if (result) {
         order.ingredients = result.ingredients;

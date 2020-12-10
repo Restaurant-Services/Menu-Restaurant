@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { ModalComponent } from '../modal/modal.component';
+import { ModalRecipeComponent } from '../modal/modal-recipe/modal-recipe.component';
 import { Order } from '../shared/order';
 import { Recipe } from '../shared/recipe';
 
@@ -40,12 +40,7 @@ export class MenuItemComponent implements OnInit {
   }
 
   openModalDialog(): void {
-    const modalDialogRef = this.dialog.open(ModalComponent, this.modalDialogConfig);
-    modalDialogRef.afterClosed().subscribe((result: Order) => {
-      if (result) {
-        console.log(JSON.stringify(result));
-      }
-    });
+    this.dialog.open(ModalRecipeComponent, this.modalDialogConfig);
   }
 
   private emit(order: Order): void {
