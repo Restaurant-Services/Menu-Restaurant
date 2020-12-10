@@ -5,6 +5,10 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+b {
+  color: darkorange;
+}
+
 h1, .center-text {
   text-align: center;
 }

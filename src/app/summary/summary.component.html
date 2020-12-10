@@ -10,15 +10,15 @@
       <table class="table">
         <thead>
           <tr>
-            <th scope="col" class="center-text margin-vertical-auto">Piatto</th>
-            <th scope="col" class="center-text margin-vertical-auto">Prezzo</th>
-            <th scope="col" class="center-text margin-vertical-auto">Quantità</th>
-            <th scope="col" class="center-text margin-vertical-auto">Note</th>
+            <th scope="col" class="center-text margin-vertical-auto"><b>Piatto</b></th>
+            <th scope="col" class="center-text margin-vertical-auto"><b>Prezzo</b></th>
+            <th scope="col" class="center-text margin-vertical-auto"><b>Quantità</b></th>
+            <th scope="col" class="center-text margin-vertical-auto"><b>Note</b></th>
           </tr>
         </thead>
         <tbody>
           <tr *ngIf="orderArray.length === 0">
-            <th colspan="4" class="center-text margin-vertical-auto">NESSUN ELEMENTO</th>
+            <th colspan="4" class="center-text margin-vertical-auto"><b>NESSUN ELEMENTO</b></th>
           </tr>
           <tr *ngFor="let order of orderArray; let i = index">
             <td>
