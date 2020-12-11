@@ -60,13 +60,16 @@ export class Order {
     this.price = this.recipe.price;
   }
 
-  public equals(order: Order, checkedSensitive: boolean): boolean {
+  public equals(compare: Order, checkedSensitive: boolean): boolean {
+    if (!compare) {
+      return false;
+    }
     let equal = true;
-    if (!this.recipe.equals(order.recipe)) {
+    if (!this.recipe.equals(compare.recipe)) {
       return false;
     }
     this.ingredients.forEach((ingredient: OptionalIngredient, index: number) => {
-      if (equal && !ingredient.equals(order.ingredients[index], checkedSensitive)) {
+      if (equal && !ingredient.equals(compare.ingredients[index], checkedSensitive)) {
         equal = false;
       }
     });

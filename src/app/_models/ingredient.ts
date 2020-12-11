@@ -28,6 +28,9 @@ export class Ingredient {
   }
 
   public equals(compare: Ingredient): boolean {
+    if (!compare) {
+      return false;
+    }
     return this.id === compare.id && this.name === compare.name;
   }
 }

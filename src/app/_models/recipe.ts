@@ -84,6 +84,9 @@ export class Recipe {
   }
 
   public equals(compare: Recipe): boolean {
+    if (!compare) {
+      return false;
+    }
     return this.id === compare.id && this.code === compare.code;
   }
 }

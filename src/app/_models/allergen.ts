@@ -17,6 +17,9 @@ export class Allergen {
   }
 
   public equals(compare: Allergen): boolean {
+    if (!compare) {
+      return false;
+    }
     return this.id === compare.id && this.name === compare.name;
   }
 }

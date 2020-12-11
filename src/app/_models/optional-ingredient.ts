@@ -29,6 +29,9 @@ export class OptionalIngredient {
 
   public equals(compare: OptionalIngredient,
                 checkedSensitive: boolean = false): boolean {
+    if (!compare) {
+      return false;
+    }
     if (checkedSensitive) {
       return this.equalsComplete(compare);
     } else {

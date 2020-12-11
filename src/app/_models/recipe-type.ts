@@ -56,6 +56,9 @@ export class RecipeType {
   }
 
   public equals(compare: RecipeType): boolean {
+    if (!compare) {
+      return false;
+    }
     return this.id === compare.id && this.name === compare.name;
   }
 }
