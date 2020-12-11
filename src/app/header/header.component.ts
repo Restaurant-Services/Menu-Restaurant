@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { SidenavComponent } from '../sidenav/sidenav.component';
-import { RecipeType } from '../shared/recipe-type';
-import { EXTRA_SECTIONS } from '../shared/mock/mock-recipe-types';
+import { RecipeType } from '../_models/recipe-type';
+import { EXTRA_SECTIONS } from '../_models/mocks/mock-recipe-types';
 
 @Component({
   selector: 'app-header',

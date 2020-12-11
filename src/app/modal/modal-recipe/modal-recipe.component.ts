@@ -1,9 +1,9 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Allergen } from '../../shared/allergen';
-import { OptionalIngredient } from '../../shared/optional-ingredient';
-import { Order } from '../../shared/order';
-import { Recipe } from '../../shared/recipe';
+import { Allergen } from '../../_models/allergen';
+import { OptionalIngredient } from '../../_models/optional-ingredient';
+import { Order } from '../../_models/order';
+import { Recipe } from '../../_models/recipe';
 
 @Component({
   selector: 'app-modal',

@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { RecipeType } from '../shared/recipe-type';
-import { RECIPE_TYPES } from '../shared/mock/mock-recipe-types';
+import { RecipeType } from '../_models/recipe-type';
+import { RECIPE_TYPES } from '../_models/mocks/mock-recipe-types';
 
 @Component({
   selector: 'app-credits',

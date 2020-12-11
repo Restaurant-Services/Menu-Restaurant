@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ModalRecipeComponent } from '../modal/modal-recipe/modal-recipe.component';
-import { Order } from '../shared/order';
-import { Recipe } from '../shared/recipe';
+import { Order } from '../_models/order';
+import { Recipe } from '../_models/recipe';
 
 @Component({
   selector: 'app-menu-item',

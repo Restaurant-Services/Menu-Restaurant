@@ -1,9 +1,9 @@
 import { Component, HostListener, Input } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
-import { Order } from '../shared/order';
-import { Recipe } from '../shared/recipe';
-import { RecipeType } from '../shared/recipe-type';
-import { RECIPES } from '../shared/mock/mock-recipes';
+import { Order } from '../_models/order';
+import { Recipe } from '../_models/recipe';
+import { RecipeType } from '../_models/recipe-type';
+import { RECIPES } from '../_models/mocks/mock-recipes';
 
 @Component({
   selector: 'app-body',
