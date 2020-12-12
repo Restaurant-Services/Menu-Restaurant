@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnChanges, OnInit, Output, SimpleChange, SimpleChanges } from '@angular/core';
 import { SummaryComponent } from '../summary/summary.component';
 import { Order } from '../_models/order';
 import { Recipe } from '../_models/recipe';
@@ -9,7 +9,7 @@ import { RecipeType } from '../_models/recipe-type';
   templateUrl: './matrix.component.html',
   styleUrls: ['./matrix.component.css']
 })
-export class MatrixComponent implements OnInit {
+export class MatrixComponent implements OnInit, OnChanges {
   @Input()
   recipes: Recipe[];
   @Input()
@@ -28,6 +28,15 @@ export class MatrixComponent implements OnInit {
     this.onResize();
     this.recipesPerSelectedType();
   }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    const currentChange: SimpleChange = changes.selectedRecipeType;
+    if (currentChange) {
+      this.scrollToTop();
+    }
+  }
+
+  scrollToTop(): void { }
 
   @HostListener('window:resize', ['$event'])
   onResize(): void {
