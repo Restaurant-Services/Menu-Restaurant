@@ -17,7 +17,7 @@ export const ALLERGENS: Allergen[] = [
   new Allergen('Pesce Surgelato'),
   new Allergen('Abbattuto'),
   new Allergen('Surgelato')
-].sort(Allergen.sort);
+];
 
 ALLERGENS.forEach((allergen: Allergen, index: number) => {
   allergen.id = index;
