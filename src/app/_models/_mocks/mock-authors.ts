@@ -1,9 +1,7 @@
 import { Author } from '../author';
 
-let index = 0;
-
 export const AUTHORS: Author[] = [
-  new Author(index++, 'Eucalyp'),
-  new Author(index++, 'Freepik'),
-  new Author(index++, 'mangsaabguru')
+  new Author('Eucalyp'),
+  new Author('Freepik'),
+  new Author('mangsaabguru')
 ].sort(Author.sort);
