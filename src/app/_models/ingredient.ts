@@ -7,12 +7,10 @@ export class Ingredient {
   allergens: Allergen[];
   noteName: string;
 
-  constructor(id: number,
-              name: string,
+  constructor(name: string,
               price: number = 0.0,
               allergens: Allergen[] = [],
               noteName: string = name.toLowerCase()) {
-    this.id = id;
     this.name = name;
     this.price = price;
     this.allergens = allergens.sort(Allergen.sort);
