@@ -22,7 +22,7 @@ export class Recipe {
               type: RecipeType,
               description: string,
               price: number,
-              pieces: number,
+              pieces: number = null,
               allergens: number[] = [],
               ingredientsIncluded: number[] = [],
               ingredientsNotIncluded: number[] = [],
