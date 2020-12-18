@@ -16,8 +16,7 @@ export class Recipe {
   ingredients: OptionalIngredient[] = [];
   png: string;
 
-  constructor(id: number,
-              code: string,
+  constructor(code: string,
               name: string,
               type: RecipeType,
               description: string,
@@ -28,7 +27,6 @@ export class Recipe {
               ingredientsNotIncluded: number[] = [],
               ingredientsMustHave: number[] = [],
               pngNameWithoutExt: string = null) {
-    this.id = id;
     this.code = code;
     this.name = name;
     this.type = type;
