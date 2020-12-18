@@ -10,7 +10,7 @@ export class Order {
 
   constructor(recipe: Recipe,
               quantity: number = 0,
-              optionalIngredients: OptionalIngredient[] = recipe.optionalIngredients) {
+              optionalIngredients: OptionalIngredient[] = recipe.ingredients) {
     this.recipe = recipe;
     this.quantity = quantity;
     this.ingredients = optionalIngredients.sort(OptionalIngredient.sort);
@@ -32,7 +32,7 @@ export class Order {
     this.description = '';
     this.resetPrice();
     this.ingredients.forEach((optIngr: OptionalIngredient, index: number) => {
-      if (!optIngr.equals(this.recipe.optionalIngredients[index], true)) {
+      if (!optIngr.equals(this.recipe.ingredients[index], true)) {
         this.description += ', ';
         this.description += optIngr.checked ? 'CON ' : 'NO ';
         this.description += optIngr.ingredient.noteName;
