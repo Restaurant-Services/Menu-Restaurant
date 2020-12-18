@@ -3,7 +3,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { Order } from '../_models/order';
 import { Recipe } from '../_models/recipe';
 import { RecipeType } from '../_models/recipe-type';
-import { RECIPES } from '../_models/mocks/mock-recipes';
+import { RECIPES } from '../_models/_mocks/mock-recipes';
 
 @Component({
   selector: 'app-body',

@@ -3,7 +3,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { HeaderComponent } from '../header/header.component';
 import { RecipeType } from '../_models/recipe-type';
-import { RECIPE_TYPES } from '../_models/mocks/mock-recipe-types';
+import { RECIPE_TYPES } from '../_models/_mocks/mock-recipe-types';
 
 @Component({
   selector: 'app-sidenav',

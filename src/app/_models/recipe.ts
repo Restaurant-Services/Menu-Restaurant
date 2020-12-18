@@ -1,8 +1,8 @@
 import { Allergen } from './allergen';
 import { OptionalIngredient } from './optional-ingredient';
 import { RecipeType } from './recipe-type';
-import { ALLERGENS } from './mocks/mock-allergens';
-import { INGREDIENTS } from './mocks/mock-ingredients';
+import { ALLERGENS } from './_mocks/mock-allergens';
+import { INGREDIENTS } from './_mocks/mock-ingredients';
 
 export class Recipe {
   id: number;
