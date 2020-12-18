@@ -25,9 +25,9 @@ export class Recipe {
               pieces: number,
               allergens: number[] = [],
               ingredientsIncluded: number[] = [],
-              alternativeCode: string = null,
               ingredientsNotIncluded: number[] = [],
-              ingredientsMustHave: number[] = []) {
+              ingredientsMustHave: number[] = [],
+              pngNameWithoutExt: string = null) {
     this.id = id;
     this.code = code;
     this.name = name;
@@ -47,7 +47,7 @@ export class Recipe {
     allergens.forEach((allergen: number) => {
       this.allergens.push(ALLERGENS[allergen]);
     });
-    this.png = (alternativeCode === null ? code : alternativeCode);
+    this.png = (pngNameWithoutExt === null ? code : pngNameWithoutExt);
     this.png = 'assets/img/' + this.png;
     this.png += '.PNG';
     this.sortAndCleanArrays();
