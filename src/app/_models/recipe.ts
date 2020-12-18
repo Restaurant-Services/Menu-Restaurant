@@ -12,8 +12,8 @@ export class Recipe {
   description: string;
   price: number;
   pieces: number;
-  optionalIngredients: OptionalIngredient[] = [];
   allergens: Allergen[] = [];
+  ingredients: OptionalIngredient[] = [];
   png: string;
 
   constructor(id: number,
@@ -23,11 +23,11 @@ export class Recipe {
               description: string,
               price: number,
               pieces: number,
-              includedIngredients: number[] = [],
               allergens: number[] = [],
+              ingredientsIncluded: number[] = [],
               alternativeCode: string = null,
-              notFreeIngredients: number[] = [],
-              mustIngredients: number[] = []) {
+              ingredientsNotIncluded: number[] = [],
+              ingredientsMustHave: number[] = []) {
     this.id = id;
     this.code = code;
     this.name = name;
@@ -35,19 +35,19 @@ export class Recipe {
     this.description = description;
     this.price = price;
     this.pieces = pieces;
-    includedIngredients.forEach((ingredientId: number) => {
-      this.optionalIngredients.push(new OptionalIngredient(INGREDIENTS[ingredientId], true));
+    ingredientsIncluded.forEach((ingredientId: number) => {
+      this.ingredients.push(new OptionalIngredient(INGREDIENTS[ingredientId], true));
     });
-    notFreeIngredients.forEach((ingredientId: number) => {
-      this.optionalIngredients.push(new OptionalIngredient(INGREDIENTS[ingredientId], true, false));
+    ingredientsNotIncluded.forEach((ingredientId: number) => {
+      this.ingredients.push(new OptionalIngredient(INGREDIENTS[ingredientId], true, false));
     });
-    mustIngredients.forEach((ingredientId: number) => {
-      this.optionalIngredients.push(new OptionalIngredient(INGREDIENTS[ingredientId]));
+    ingredientsMustHave.forEach((ingredientId: number) => {
+      this.ingredients.push(new OptionalIngredient(INGREDIENTS[ingredientId]));
     });
     allergens.forEach((allergen: number) => {
       this.allergens.push(ALLERGENS[allergen]);
     });
-    this.png = (alternativeCode === null ? code.replace('VEG', '') : alternativeCode);
+    this.png = (alternativeCode === null ? code : alternativeCode);
     this.png = 'assets/img/' + this.png;
     this.png += '.PNG';
     this.sortAndCleanArrays();
@@ -62,14 +62,14 @@ export class Recipe {
   }
 
   private sortAndCleanArrays(): void {
-    this.optionalIngredients.sort(OptionalIngredient.sort);
-    for (let i = 1; i < this.optionalIngredients.length; i++) {
-      if (this.optionalIngredients[i].equals(this.optionalIngredients[i - 1])) {
+    this.ingredients.sort(OptionalIngredient.sort);
+    for (let i = 1; i < this.ingredients.length; i++) {
+      if (this.ingredients[i].equals(this.ingredients[i - 1])) {
         i--;
-        this.optionalIngredients.splice(i, 1);
+        this.ingredients.splice(i, 1);
       }
     }
-    this.optionalIngredients.forEach((optionalIngredient: OptionalIngredient) => {
+    this.ingredients.forEach((optionalIngredient: OptionalIngredient) => {
       optionalIngredient.ingredient.allergens.forEach((allergen: Allergen) => {
         this.allergens.push(allergen);
       });
