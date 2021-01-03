@@ -5,12 +5,16 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-b {
-  color: darkorange;
+p {
+  text-align: justify;
 }
 
 h1, .center-text {
   text-align: center;
+}
+
+b {
+  color: darkorange;
 }
 
 .header-height {
