@@ -3,25 +3,26 @@
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 record">
       <ng-container *ngIf="!showCredits">
         <h1>ISTRUZIONI</h1>
-        <h2>Non aggiornare questo sito!</h2>
+        <h2>Non aggiornare questo sito</h2>
         <p>
-          Per non perdere l'ordine, <u>non</u> si deve né aggiornare questa pagina (swipe verso il basso o tasto F5 se
-          presente sulla tastiera del dispositivo) né tornare indietro nella cronologia (freccia verso sinistra).
+          Questo sito è sprovvisto di qualsiasi sistema di salvataggio/invio/recupero dati, non possiamo sapere nulla su
+          di voi, neanche il <u>vostro ordine</u>.
         </p>
+        <h2>Le note sono importanti</h2>
         <p>
-          Questo sito è sprovvisto di qualsiasi sistema di salvataggio dati, non possiamo sapere nulla su di voi,
-          <u>neanche il vostro ordine</u>.
-        </p>
-        <h2>Le note sono importanti!</h2>
-        <p>
-          Non tutti vogliono il Philadelphia sul proprio Nigiri Sake Flower, magari 2 o più congiunti allo stesso
-          tavolo la pensano diversamente.
-          <br>
-          Toccando il campo note sarà possibile rimuove o aggiungere Ingredienti per personalizzare la pietanza.
+          Le modifiche sono previste nella sezione RIEPILOGO, cliccando/toccando il campo note della riga relativa al
+          piatto che si vuole personalizzare.
         </p>
         <h2 *ngIf="!showCredits">
-          Cliccare su CREDITS per avere maggiori dettagli sui contributi al progetto e sulle istruzioni
+          Crediti e Cookies
         </h2>
+        <p>
+          Cliccare in alto a destra per andare nella pagina Credits (chi ha contribuito al progetto) o nella pagina dei
+          Cookies (spiegazioni e dettagli).
+        </p>
+        <p>
+          Le 2 pagine si alterneranno ad ogni click/tocco nell'angolo in alto a destra.
+        </p>
       </ng-container>
       <ng-container *ngIf="showCredits">
         <h1>MENÙ DIGITALE REALIZZATO DA:</h1>
