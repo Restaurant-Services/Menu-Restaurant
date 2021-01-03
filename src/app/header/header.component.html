@@ -5,6 +5,19 @@
     <span class="flex-expand"></span>
     <span (click)="showSummary()">RIEPILOGO</span>
     <span class="flex-expand"></span>
-    <span (click)="showCreditsOrCookies()" [innerText]="topRightHeader"></span>
+    <span (click)="showCreditsOrCookies()">
+      <table>
+        <tr>
+          <td>
+            <span class="center-text">CREDITS</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="center-text">COOKIES</span>
+          </td>
+        </tr>
+      </table>
+    </span>
   </mat-toolbar-row>
 </mat-toolbar>

@@ -11,14 +11,10 @@ import { EXTRA_SECTIONS } from '../_models/_mocks/mock-recipe-types';
 export class HeaderComponent {
   readonly sections: RecipeType[] = EXTRA_SECTIONS;
   selectedSectionID = 1;
-  topRightHeader: string;
+  innerWidth: number;
 
   @Input()
   sidenavComponent: SidenavComponent;
-
-  constructor() {
-    this.setTopRight();
-  }
 
   showHideMenu(): void {
     this.sidenavComponent.expandReduceNav();
@@ -27,22 +23,15 @@ export class HeaderComponent {
   showCreditsOrCookies(): void {
     if (this.selectedSectionID > 0) {
       this.selectedSectionID = 0;
-      this.setTopRight(true);
     } else {
       this.selectedSectionID = 1;
-      this.setTopRight();
     }
     this.shows();
   }
 
   showSummary(): void {
     this.selectedSectionID = 2;
-    this.setTopRight();
     this.shows();
-  }
-
-  public setTopRight(cookie: boolean = false): void {
-    this.topRightHeader = cookie ? 'COOKIES' : 'CREDITS';
   }
 
   private shows(): void {

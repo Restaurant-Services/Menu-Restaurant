@@ -40,9 +40,6 @@ export class SidenavComponent {
   public changeRecipeType(type: RecipeType): void {
     if (!type.equals(this.selectedType)) {
       this.selectedType = type;
-      if (type.id > -1) {
-        this.headerComponent.setTopRight();
-      }
       this.reduceSidenav();
     }
   }
