@@ -24,8 +24,8 @@
             <td>
               <table class="table-buttons margin-vertical-auto">
                 <tr>
-                  <td class="table-buttons-elem center-text">
-                    {{ order.recipe.name }}
+                  <td class="table-buttons-elem margin-vertical-auto">
+                    {{ order.recipe.displayName }}
                   </td>
                 </tr>
               </table>
@@ -33,7 +33,7 @@
             <td>
               <table class="table-buttons margin-vertical-auto">
                 <tr>
-                  <td class="table-buttons-elem center-text"
+                  <td class="table-buttons-elem center-text margin-vertical-auto"
                       [innerText]="order.price.toFixed(2).replace('.', ',') + ' €'">
                   </td>
                 </tr>

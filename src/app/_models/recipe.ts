@@ -8,6 +8,7 @@ export class Recipe {
   id: number;
   code: string;
   name: string;
+  displayName: string;
   type: RecipeType;
   description: string;
   price: number;
@@ -26,7 +27,8 @@ export class Recipe {
               ingredientsIncluded: number[] = [],
               ingredientsNotIncluded: number[] = [],
               ingredientsMustHave: number[] = [],
-              pngNameWithoutExt: string = null) {
+              pngNameWithoutExt: string = null,
+              displayName: string = name) {
     this.code = code;
     this.name = name;
     this.type = type;
@@ -48,6 +50,7 @@ export class Recipe {
     this.png = (pngNameWithoutExt === null ? code : pngNameWithoutExt);
     this.png = 'assets/img/' + this.png;
     this.png += '.PNG';
+    this.displayName = displayName;
     this.sortAndCleanArrays();
   }
 

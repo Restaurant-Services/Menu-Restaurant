@@ -10,7 +10,7 @@
            class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <p class="text">
-            <b>{{ order.recipe.code !== null ? order.recipe.code : order.recipe.name }}</b>
+            <b>{{ order.recipe.code !== null ? order.recipe.code : order.recipe.displayName }}</b>
             {{ 'X ' + order.quantity + (order.description ? ' ' + order.description : '') + (i + 1 < orders.length ? ',' : '') }}
           </p>
         </div>
