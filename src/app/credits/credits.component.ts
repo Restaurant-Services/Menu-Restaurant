@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { RecipeType } from '../_models/recipe-type';
@@ -11,9 +11,6 @@ import { RECIPE_TYPES } from '../_models/_mocks/mock-recipe-types';
 })
 export class CreditsComponent {
   readonly recipeTypes: RecipeType[] = RECIPE_TYPES;
-
-  @Input()
-  showCredits = true;
 
   constructor(private matIconRegistry: MatIconRegistry,
               private domSanitizer: DomSanitizer) {

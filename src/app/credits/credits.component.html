@@ -1,57 +1,54 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 record">
-      <ng-container *ngIf="!showCredits">
-        <h1>ISTRUZIONI</h1>
-        <h2>Non aggiornare questo sito</h2>
-        <p>
-          Questo sito è sprovvisto di qualsiasi sistema di salvataggio/invio/recupero dati, non possiamo sapere nulla su
-          di voi, neanche il <u>vostro ordine</u>.
+      <h1>MENÙ DIGITALE REALIZZATO DA:</h1>
+      <h2 class="center-text">
+        <a href="https://github.com/Restaurant-Services">Restaurant Services</a>
+      </h2>
+      <p>
+        Questo sito è
+        <a href="https://github.com/Restaurant-Services/Menu-Restaurant">Open Source</a>,
+        il codice per costruirlo è consultabile gratuitamente ed i membri del team sono molto disponibili.
+      </p>
+      <p>
+        Il team ha cercato di realizzare questo sito in modo che sia:
+      </p>
+      <ul>
+        <li>
+          <b>Veloce</b>, il sito è molto performante;
+        </li>
+        <li>
+          <b>Leggero</b>, il sito non ha requisiti minimi per quanto riguarda il server;
+        </li>
+        <li>
+          <b>Ben scritto</b>, il codice del sito è stato scritto per essere molto semplice e chiaro per permettere a
+          chiunque, nel rispetto della licenza, di modificarne il codice;
+        </li>
+        <li>
+          <b>Facile</b>, la grafica del sito è intuitiva per i clienti;
+        </li>
+        <li>
+          <b>Personalizzabile</b>, il menù è facile da personalizzare, permette ai ristoratori di farlo senza dover
+          studiare nulla di programmazione.
+        </li>
+      </ul>
+      <h1>ICONE REALIZZATE DA:</h1>
+      <div *ngFor="let type of recipeTypes" class="record">
+        <p class="center-text">
+          <mat-icon class="icon-display" svgIcon="{{ type.svg }}" mat-list-icon></mat-icon>
+          <span class="space-left">
+            <a href="{{ type.getAuthorLink() }}"
+               title="{{ type.svgAuthor.name }}">
+              {{ type.svgAuthor.name }}
+            </a>
+            su
+            <a href="{{ type.getLink() }}"
+               title="{{ type.getServiceName() }}">
+              {{ type.getLinkWithoutHTTP() }}
+            </a>
+          </span>
         </p>
-        <h2>Le note sono importanti</h2>
-        <p>
-          Le modifiche sono previste nella sezione RIEPILOGO, cliccando/toccando il campo note della riga relativa al
-          piatto che si vuole personalizzare.
-        </p>
-        <h2 *ngIf="!showCredits">
-          Crediti e Cookies
-        </h2>
-        <p>
-          Cliccare in alto a destra per andare nella pagina Credits (chi ha contribuito al progetto) o nella pagina dei
-          Cookies (spiegazioni e dettagli).
-        </p>
-        <p>
-          Le 2 pagine si alterneranno ad ogni click/tocco nell'angolo in alto a destra.
-        </p>
-      </ng-container>
-      <ng-container *ngIf="showCredits">
-        <h1>MENÙ DIGITALE REALIZZATO DA:</h1>
-        <h2 class="center-text">
-          <a href="https://github.com/Restaurant-Services">Restaurant Services</a>
-        </h2>
-        <p>
-          Questo sito è
-          <a href="https://github.com/Restaurant-Services/Menu-Restaurant">Open Source</a>,
-          il codice per costruirlo è consultabile gratuitamente ed i membri del team sono molto disponibili.
-        </p>
-        <h1>ICONE REALIZZATE DA:</h1>
-        <div *ngFor="let type of recipeTypes" class="record">
-          <p class="center-text">
-            <mat-icon class="icon-display" svgIcon="{{ type.svg }}" mat-list-icon></mat-icon>
-            <span class="space-left">
-              <a href="{{ type.getAuthorLink() }}"
-                 title="{{ type.svgAuthor.name }}">
-                {{ type.svgAuthor.name }}
-              </a>
-              su
-              <a href="{{ type.getLink() }}"
-                 title="{{ type.getServiceName() }}">
-                {{ type.getLinkWithoutHTTP() }}
-              </a>
-            </span>
-          </p>
-        </div>
-      </ng-container>
+      </div>
     </div>
   </div>
 </div>
