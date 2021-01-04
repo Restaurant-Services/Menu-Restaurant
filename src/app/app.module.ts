@@ -21,6 +21,7 @@ import { SummaryComponent } from './summary/summary.component';
 import { ModalModule } from './modal/modal.module';
 import { CookieService } from 'ngx-cookie-service';
 import { CookiesComponent } from './cookies/cookies.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CookiesComponent } from './cookies/cookies.component';
     MatrixComponent,
     MenuItemComponent,
     SummaryComponent,
-    CookiesComponent
+    CookiesComponent,
+    DashboardComponent
   ],
   imports: [
     ModalModule,
