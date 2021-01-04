@@ -1,4 +1,5 @@
-<app-credits *ngIf="type === null || type.id === -3"
+<app-dashboard *ngIf="!type"></app-dashboard>
+<app-credits *ngIf="type && type.id === -3"
              [showCredits]="type !== null"></app-credits>
 <app-cookies *ngIf="type && type.id === -2"></app-cookies>
 <app-summary *ngIf="type && type.id === -1"
